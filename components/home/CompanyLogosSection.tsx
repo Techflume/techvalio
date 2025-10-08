@@ -4,10 +4,10 @@ import React from 'react'
 
 export default function CompanyLogosSection() {
   // Generate array of brand logos from logo1.png to logo13.png
-  const brandLogos = Array.from({ length: 14 }, (_, index) => ({
-    src: `/images/brands/logo${index + 1}.png`,
-    alt: `Brand Logo ${index + 1}`,
-    id: `brand-logo-${index + 1}`
+  const brandLogos = Array.from({ length: 7 }, (_, index) => ({
+    src: `/images/services/services${index + 1}.jpg`,
+    alt: `services Logo ${index + 1}`,
+    id: `services-logo-${index + 1}`
   }));
 
   // Duplicate the logos array for seamless infinite scroll
@@ -17,7 +17,7 @@ export default function CompanyLogosSection() {
     <section className="py-12 bg-white flex justify-center">
       <div className="container">
         <h3 className="text-center text-sm font-semibold text-muted-foreground mb-8">
-          TRUSTED BY TOP BRANDS
+          OUR TOP SERVICES
         </h3>
         <div className="relative w-full overflow-hidden">
           <div className="flex animate-marquee">
@@ -30,9 +30,9 @@ export default function CompanyLogosSection() {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={158}
-                  height={48}
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 max-w-full"
+                  width={200}
+                  height={80}
+                  className="h-32 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 max-w-full"
                 />
               </div>
             ))}

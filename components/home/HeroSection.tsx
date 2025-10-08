@@ -3,28 +3,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
-// Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-
-// Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { AnimatedDiv } from "../animated-div";
+import { heroSlides } from "@/lib/data";
+
+
 
 const HeroSectionDemo = () => {
-  // Generate array of banner paths from banner1 to banner7
-  const logoImages = Array.from({ length: 7 }, (_, index) => ({
-    src: `/images/banner/banner${index + 1}.jpg`,
-    alt: `Banner ${index + 1}`,
-    id: `banner${index + 1}`
-  }));
-
   return (
-    <section className="relative w-full py-20 md:py-32 overflow-hidden">
+    <section className="relative h-[80vh] w-full py-20 md:py-32 overflow-hidden">
       {/* Swiper Carousel Background */}
       <div className="absolute inset-0 z-0">
         <Swiper
@@ -50,26 +42,79 @@ const HeroSectionDemo = () => {
           grabCursor={true}
           className="w-full h-full"
         >
-          {logoImages.map((logo, index) => (
-            <SwiperSlide key={logo.id}>
+          {heroSlides.map((slide, idx) => (
+            <SwiperSlide key={slide.alt}>
               <div className="relative w-full h-full">
+                {/* Background Image */}
                 <Image
-                  src={logo.src}
-                  alt={logo.alt}
+                  src={slide.src}
+                  alt={slide.alt}
                   fill
                   className="object-cover"
-                  priority={index === 0}
+                  priority={idx === 0}
                 />
-                {/* Dark overlay for better text readability */}
+                {/* Overlay */}
                 <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
-                {/* Additional gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+
+                {/* Slide Content */}
+                <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center px-4 pointer-events-none">
+                  <div className="w-full z-10 text-center max-w-3xl mx-auto">
+                    <AnimatedDiv
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                      <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg mb-2">
+                        {slide.headline} <br />
+                        <span className="text-primary">{slide.highlight}</span>
+                      </h1>
+                    </AnimatedDiv>
+                    <AnimatedDiv
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                      className="mt-6 text-lg text-white/90 drop-shadow-md"
+                    >
+                      <p>{slide.description}</p>
+                    </AnimatedDiv>
+                    <AnimatedDiv
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                      className="mt-8 flex flex-wrap justify-center gap-4 pointer-events-auto"
+                    >
+                      <Button
+                        asChild
+                        size="lg"
+                        className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
+                      >
+                        <Link href={slide.cta.href}>{slide.cta.label}</Link>
+                      </Button>
+                      <Button
+                        asChild
+                        size="lg"
+                        variant="outline"
+                        className="border-white/30 hover:bg-white/10 hover:border-white/50 shadow-lg hover:shadow-xl transition-all duration-300"
+                      >
+                        <Link href={slide.secondary.href}>{slide.secondary.label}</Link>
+                      </Button>
+                    </AnimatedDiv>
+                    <AnimatedDiv
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+                      className="mt-8 text-sm text-white/80 drop-shadow-md"
+                    >
+                      <p>{slide.features}</p>
+                    </AnimatedDiv>
+                  </div>
+                </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* Custom Navigation Buttons with proper styling and positioning */}
+        {/* Navigation Buttons */}
         <button
           className="hero-swiper-button-prev absolute top-1/2 left-4 z-10 -translate-y-1/2 flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all duration-300 cursor-pointer"
           aria-label="Previous slide"
@@ -78,7 +123,6 @@ const HeroSectionDemo = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-
         <button
           className="hero-swiper-button-next absolute top-1/2 right-4 z-10 -translate-y-1/2 flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all duration-300 cursor-pointer"
           aria-label="Next slide"
@@ -87,73 +131,9 @@ const HeroSectionDemo = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
-
-        {/* Custom Pagination */}
+        {/* Pagination */}
         <div className="hero-swiper-pagination absolute bottom-8 left-1/2 z-10 -translate-x-1/2 flex space-x-2"></div>
       </div>
-
-      <div className=" relative z-5 text-center pointer-events-none top-0">
-      
-
-        <AnimatedDiv
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-
-          <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
-            Validate Software. <br /> <span className="text-primary">Eliminate Costly Failures</span>.
-          </h1>
-        </AnimatedDiv>
-
-        <AnimatedDiv
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="mt-6 max-w-3xl mx-auto text-lg text-white/90 drop-shadow-md"
-        >
-          <p>
-            Our Software Validation Services ensure your solutions perform flawlessly,
-            meet all user requirements, and deliver **Audit-Ready Documentation** for
-            regulated industries.
-          </p>
-        </AnimatedDiv>
-
-        <AnimatedDiv
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="mt-8 flex flex-wrap justify-center gap-4 pointer-events-auto"
-        >
-          <Button
-            asChild
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <Link href="#get-started">Get Started</Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-white/30  hover:bg-white/10 hover:border-white/50 shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <Link href="#contact">Contact Us</Link>
-          </Button>
-        </AnimatedDiv>
-
-        <AnimatedDiv
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="mt-8 text-sm text-white/80 drop-shadow-md"
-        >
-          <p>
-            ✓ **Risk-Based Validation** • ✓ Deep **Domain Knowledge** • ✓ Seamlessly **Agile-Friendly**
-          </p>
-        </AnimatedDiv>
-      </div>
-
       {/* Custom CSS for pagination styling */}
       <style jsx>{`
         .hero-swiper-pagination .swiper-pagination-bullet {

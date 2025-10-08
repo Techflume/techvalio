@@ -1,42 +1,32 @@
-import type { NavItem } from './types';
-import { Cog, ShieldCheck, Truck, Clock, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, MessageSquare, Phone, Mail, Clock10, CircleCheckBig, Car, Component, Settings2, Wind, Sun, Disc, Circle, Shield, Target,  Zap,  Cloud,  Stethoscope,  Repeat2, Scale,  CheckCircle, Building, Trophy, Layers, FileText,Settings,   } from 'lucide-react';
+// /lib/data.js 
+
+import { Cog, ShieldCheck,  Users, Award, Car, Component, Settings2, Wind, Sun, Disc, Circle, Shield, Target,  Zap,  Cloud,  Stethoscope,  Repeat2, Scale,  Building, Trophy, Layers, FileText,Settings,   } from 'lucide-react';
 
 
-// /lib/data.js
+
+// /lib/data.ts 
 export const navItems = [
+  { label: "Services", href: "/services" },
+  { label: "Industry", href: "/industry" },
+  { label: "Compliance", href: "/compliance" },
   {
-    label: "Services",
-    href: "/services",
+    label: "Resources",
+    href: "/resources",
     children: [
-      {
-        label: "Software Solutions",
-        href: "/services/software",
-        children: [
-          { label: "Software Testing and Validation", href: "/services/software/testing-validation" },
-          { label: "GxP & Non-GxP Software Validation", href: "/services/software/gxp-validation" },
-          { label: "Enterprise Solutions Validation", href: "/services/software/enterprise-validation" },
-          { label: "Quality Management Solutions Validation", href: "/services/software/qms-validation" },
-        ],
-      },
-      {
-        label: "Pharmaceutical Solutions",
-        href: "/services/pharma",
-        children: [
-          { label: "Computer System Validation", href: "/services/pharma/csv" },
-          { label: "Equipment Qualification & Process Validation", href: "/services/pharma/equipment-process" },
-          { label: "Cleanroom HVAC Installation & Qualification", href: "/services/pharma/cleanroom-hvac" },
-          { label: "Data Centre & Server Qualification", href: "/services/pharma/datacentre-server" },
-          { label: "Data Migration & Data Qualification", href: "/services/pharma/data" },
-          { label: "Training and Webinars", href: "/services/pharma/training" },
-        ],
-      },
+      { label: "Blog", href: "/resources/blog" },
     ],
   },
-  { label: "Products", href: "/products" },
-  { label: "Resources", href: "/resources" },
-  { label: "Company", href: "/company" },
+  {
+    label: "Company",
+    href: "/company",
+    children: [
+      { label: "About Us", href: "/company/about" },
+      { label: "Why Us", href: "/company/why-us" },
+    ],
+  },
   { label: "Contact", href: "/contact" },
 ];
+
 
 
 export const companyLogos = [
@@ -48,6 +38,41 @@ export const companyLogos = [
     { name: "Valeo", imageId: "valeo-logo" },
 ];
 
+// Can go in your page or in a separate /lib/data.js file
+
+export const heroSlides = [
+  {
+    src: "/images/banner/banner1.jpg",
+    alt: "Banner 1",
+    headline: "Validate Software.",
+    highlight: "Eliminate Costly Failures.",
+    description: "Our Software Validation Services ensure your solutions perform flawlessly, meet all user requirements, and deliver Audit-Ready Documentation for regulated industries.",
+    cta: { label: "Get Started", href: "#get-started" },
+    secondary: { label: "Contact Us", href: "#contact" },
+    features: "✓ Risk-Based Validation • ✓ Deep Domain Knowledge • ✓ Seamlessly Agile-Friendly"
+  },
+  {
+    src: "/images/banner/banner2.jpg",
+    alt: "Banner 2",
+    headline: "Pharma. Enterprise. Medical Devices.",
+    highlight: "Compliant From Day One.",
+    description: "We empower pharma and medical device innovators with robust, compliant, and future-proof validation solutions tailored to global regulations.",
+    cta: { label: "Book Industry Demo", href: "#demo-industry" },
+    secondary: { label: "Talk to Pharma Expert", href: "#contact-pharma" },
+    features: "✓ GMP & ISO Standards • ✓ Equipment/Process Validation • ✓ Audit-Ready Reports"
+  },
+  {
+    src: "/images/banner/banner3.jpg",
+    alt: "Banner 3",
+    headline: "Effortless Compliance.",
+    highlight: "Zero Disruption.",
+    description: "Achieve regulatory success with seamless software and process validation — with minimum risk, maximum business continuity.",
+    cta: { label: "Explore Solutions", href: "#compliance" },
+    secondary: { label: "Get Free Assessment", href: "#free-assessment" },
+    features: "✓ Data Migration • ✓ Cloud Qualification • ✓ Cleanroom/Server Solutions"
+  },
+  // ...add up to banner7
+];
 
 
 export const whyChooseUsFeatures = [
@@ -310,3 +335,186 @@ export const popularCategories = [
     { name: "Exhaust", count: "800+ parts", imageId: "exhaust-parts", icon: Wind },
     { name: "Wheels & Tires", count: "3,500+ parts", imageId: "wheel-parts", icon: Circle },
 ];
+
+
+// /lib/data.js
+export const servicesList = [
+  {
+    image: "/images/services/services1.jpg",
+    title: "Pharmaceutical Licensing Services",
+    subtitle:
+      "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
+  },
+  {
+    image: "/images/services/services2.jpg",
+    title: "Equipment & Process Validation",
+    subtitle:
+      "Executing Installation, Operational, and Performance Qualification (IQ/OQ/PQ) for manufacturing and laboratory equipment to ensure consistent product quality.",
+  },
+   {
+    image: "/images/services/services3.jpg",
+    title: "Pharmaceutical Training and Webinars",
+    subtitle:
+      "Providing validation services aligned with FDA, EMA, and WHO guidelines for both regulated (GxP) and non-regulated (Non-GxP) environments.",
+  },
+  {
+    image: "/images/services/services4.jpg",
+    title:  "HVAC Installation and Qualification",
+    subtitle:
+      "Verifying controlled environments through particle count testing, airflow visualization, and temperature/humidity mapping for GMP compliance.",
+  },
+  {
+    image: "/images/services/services5.jpg",
+    title: "Computer System Validation (CSV)",
+    subtitle:
+      "Performing comprehensive validation lifecycle activities—planning, testing, documentation, and maintenance—to meet 21 CFR Part 11 and Annex 11 standards.",
+  },
+   {
+    image: "/images/services/services6.jpg",
+    title: "Data Migration & Qualification",
+    subtitle:
+      "Conducting validated data transfer processes to ensure accuracy, completeness, and traceability during system upgrades or platform transitions.",
+  },
+  {
+    image: "/images/services/services1.jpg",
+    title: "Quality Management Solutions",
+    subtitle:
+      "Implementing and validating QMS platforms to streamline quality processes, CAPA management, and compliance reporting.",
+  },
+   {
+    image: "/images/services/services1.jpg",
+    title: "Software Testing & Validation",
+    subtitle:
+      "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
+  },
+  
+  
+  
+  {
+    image: "/images/services/services1.jpg",
+    title: "Data Centre & Server Qualification",
+    subtitle:
+      "Assessing IT infrastructure—including servers, networks, and data storage systems—to ensure reliability, redundancy, and compliance with data integrity standards.",
+  },
+ 
+  {
+    image: "/images/services/services1.jpg",
+    title: "Training & Webinars",
+    subtitle:
+      "Offering specialized training and live webinars on CSV, GxP compliance, and QA best practices to build organizational expertise and readiness.",
+  },
+  
+  {
+    image: "/images/services/services1.jpg",
+    title: "Enterprise Solutions Validation",
+    subtitle:
+      "Ensuring ERP, CRM, and LIMS systems meet functional, performance, and compliance requirements for enterprise-level operations.",
+  },
+];
+
+export const industryList = [
+  {
+    image: "/images/services/services1.jpg",
+    title: "Pharmaceutical Licensing Services",
+    subtitle:
+      "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
+  },
+  {
+    image: "/images/services/services2.jpg",
+    title: "Equipment & Process Validation",
+    subtitle:
+      "Executing Installation, Operational, and Performance Qualification (IQ/OQ/PQ) for manufacturing and laboratory equipment to ensure consistent product quality.",
+  },
+   {
+    image: "/images/services/services3.jpg",
+    title: "Pharmaceutical Training and Webinars",
+    subtitle:
+      "Providing validation services aligned with FDA, EMA, and WHO guidelines for both regulated (GxP) and non-regulated (Non-GxP) environments.",
+  },
+  {
+    image: "/images/services/services4.jpg",
+    title:  "HVAC Installation and Qualification",
+    subtitle:
+      "Verifying controlled environments through particle count testing, airflow visualization, and temperature/humidity mapping for GMP compliance.",
+  },
+  {
+    image: "/images/services/services5.jpg",
+    title: "Computer System Validation (CSV)",
+    subtitle:
+      "Performing comprehensive validation lifecycle activities—planning, testing, documentation, and maintenance—to meet 21 CFR Part 11 and Annex 11 standards.",
+  },
+   {
+    image: "/images/services/services6.jpg",
+    title: "Data Migration & Qualification",
+    subtitle:
+      "Conducting validated data transfer processes to ensure accuracy, completeness, and traceability during system upgrades or platform transitions.",
+  },
+  {
+    image: "/images/services/services1.jpg",
+    title: "Quality Management Solutions",
+    subtitle:
+      "Implementing and validating QMS platforms to streamline quality processes, CAPA management, and compliance reporting.",
+  },
+   {
+    image: "/images/services/services1.jpg",
+    title: "Software Testing & Validation",
+    subtitle:
+      "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
+  },
+  
+];
+
+export const complianceList = [
+  {
+    image: "/images/services/services1.jpg",
+    title: "Pharmaceutical Licensing Services",
+    subtitle:
+      "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
+  },
+  {
+    image: "/images/services/services2.jpg",
+    title: "Equipment & Process Validation",
+    subtitle:
+      "Executing Installation, Operational, and Performance Qualification (IQ/OQ/PQ) for manufacturing and laboratory equipment to ensure consistent product quality.",
+  },
+   {
+    image: "/images/services/services3.jpg",
+    title: "Pharmaceutical Training and Webinars",
+    subtitle:
+      "Providing validation services aligned with FDA, EMA, and WHO guidelines for both regulated (GxP) and non-regulated (Non-GxP) environments.",
+  },
+  {
+    image: "/images/services/services4.jpg",
+    title:  "HVAC Installation and Qualification",
+    subtitle:
+      "Verifying controlled environments through particle count testing, airflow visualization, and temperature/humidity mapping for GMP compliance.",
+  },
+  {
+    image: "/images/services/services5.jpg",
+    title: "Computer System Validation (CSV)",
+    subtitle:
+      "Performing comprehensive validation lifecycle activities—planning, testing, documentation, and maintenance—to meet 21 CFR Part 11 and Annex 11 standards.",
+  },
+   {
+    image: "/images/services/services6.jpg",
+    title: "Data Migration & Qualification",
+    subtitle:
+      "Conducting validated data transfer processes to ensure accuracy, completeness, and traceability during system upgrades or platform transitions.",
+  },
+  {
+    image: "/images/services/services1.jpg",
+    title: "Quality Management Solutions",
+    subtitle:
+      "Implementing and validating QMS platforms to streamline quality processes, CAPA management, and compliance reporting.",
+  },
+   {
+    image: "/images/services/services1.jpg",
+    title: "Software Testing & Validation",
+    subtitle:
+      "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
+  },
+  
+  
+];
+
+
