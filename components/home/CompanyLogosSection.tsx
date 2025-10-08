@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function CompanyLogosSection() {
   // Generate array of brand logos from logo1.png to logo13.png
-  const brandLogos = Array.from({ length: 7 }, (_, index) => ({
+  const brandLogos = Array.from({ length: 6 }, (_, index) => ({
     src: `/images/services/services${index + 1}.jpg`,
     alt: `services Logo ${index + 1}`,
     id: `services-logo-${index + 1}`
