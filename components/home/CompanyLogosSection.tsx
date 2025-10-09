@@ -32,7 +32,7 @@ export default function CompanyLogosSection() {
                   alt={logo.alt}
                   width={200}
                   height={80}
-                  className="h-32 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 max-w-full"
+                  className="h-32 w-auto object-contain  transition-all duration-300 max-w-full"
                 />
               </div>
             ))}
@@ -56,7 +56,7 @@ export default function CompanyLogosSection() {
         }
         
         .animate-marquee {
-          animation: marquee 40s linear infinite;
+          animation: marquee 18s linear infinite;
         }
         
         .animate-marquee:hover {
