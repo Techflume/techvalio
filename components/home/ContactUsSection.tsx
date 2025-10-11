@@ -23,7 +23,7 @@ export default function ContactUsSection() {
   }
 
   return (
-    <section className="flex justify-center items-center min-h-screen bg-muted/30 py-10 px-4">
+    <section className="flex justify-center items-center min-h-screen bg-muted/30 py-10 px-4 " id="contact">
       <Card className="w-full max-w-5xl bg-white dark:bg-card shadow-xl border rounded-2xl overflow-hidden grid md:grid-cols-2">
         {/* Left: Contact Form */}
         <div className="p-8 md:p-10 flex flex-col justify-center">

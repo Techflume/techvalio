@@ -94,7 +94,7 @@ export default function Navbar() {
             </a>
           </div>
           <Button className="hidden md:inline-flex" size="sm" asChild>
-            <Link href="#get-quote">Request a Demo</Link>
+            <Link href="/#contact">Request a Demo</Link>
           </Button>
           {/* Mobile Menu */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
