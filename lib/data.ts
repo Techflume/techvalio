@@ -40,8 +40,8 @@ export const navItems = [
     label: "Company",
     href: "/company",
     children: [
-      { label: "About Us", href: "/company/about" },
-      { label: "Why Us", href: "/company/why-us" },
+      { label: "About Us", href: "/about" },
+      { label: "Why Us", href: "/why-us" },
     ],
   },
   { label: "Contact", href: "/contact" },
