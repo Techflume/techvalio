@@ -1,3 +1,4 @@
+import AboutSection from "@/components/home/AboutSection";
 import CompanyLogosSection from "@/components/home/CompanyLogosSection";
 import ContactUsSection from "@/components/home/ContactUsSection";
 import HappyCustomersSection from "@/components/home/HappyCustomersSection";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
       <HeroSectionDemo />
+      <AboutSection />
       <CompanyLogosSection />
       <WhyChooseUsSection />
       <HappyCustomersSection />
