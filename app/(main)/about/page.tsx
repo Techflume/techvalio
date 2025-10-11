@@ -3,9 +3,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
-// import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
-// Example team data (replace with real photos/info)
 const team = [
     {
         name: "Shivanand Prakash",
