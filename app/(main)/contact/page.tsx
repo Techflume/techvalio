@@ -16,8 +16,7 @@ import {
   Instagram,
   Youtube,
 } from "lucide-react";
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
+
 
 export default function ContactUsPage() {
   return (
@@ -59,7 +58,7 @@ export default function ContactUsPage() {
             </div>
             <Input  type="number" placeholder="Phone" required />
             <Input placeholder="Subject" required />
-            <Textarea rows={5} placeholder="Your Message" required />
+            <Textarea rows={10} placeholder="Your Message" required />
             <motion.div
               initial={{ scale: 0.96, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
