@@ -2,6 +2,7 @@ import { AnimatedDiv } from '@/components/animated-div'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { industryList } from '@/lib/data' // Use your data array like for services!
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function Industry() {
@@ -50,28 +51,30 @@ export default function Industry() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex justify-center"
               >
-                <Card className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 bg-card/50 backdrop-blur-sm border-primary/10 flex flex-col items-center justify-center">
-                  <CardHeader className="flex flex-col items-center justify-center">
-                    <div className="mx-auto mb-4 h-16 w-16 rounded-lg overflow-hidden bg-primary/10 flex items-center justify-center">
-                      <Image
-                        src={industry.image}
-                        alt={industry.title}
-                        className="object-cover h-full w-full"
-                        loading="lazy"
-                        width={84}
-                        height={84}
-                      />
-                    </div>
-                    <CardTitle className="font-headline mt-2 capitalize text-center">
-                      {industry.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex flex-col items-center justify-center">
-                    <p className="text-muted-foreground text-sm text-center">
-                      {industry.subtitle}
-                    </p>
-                  </CardContent>
-                </Card>
+                <Link href={`/industry/${industry.slug}`} className="block group focus:outline-none w-full">
+                  <Card className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 bg-card/50 backdrop-blur-sm border-primary/10 flex flex-col items-center justify-center cursor-pointer group-hover:border-primary">
+                    <CardHeader className="flex flex-col items-center justify-center">
+                      <div className="mx-auto mb-4 h-16 w-16 rounded-lg overflow-hidden bg-primary/10 flex items-center justify-center">
+                        <Image
+                          src={industry.image}
+                          alt={industry.title}
+                          className="object-cover h-full w-full"
+                          loading="lazy"
+                          width={84}
+                          height={84}
+                        />
+                      </div>
+                      <CardTitle className="font-headline mt-2 capitalize text-center">
+                        {industry.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex flex-col items-center justify-center">
+                      <p className="text-muted-foreground text-sm text-center">
+                        {industry.subtitle}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
               </AnimatedDiv>
             ))}
           </div>
