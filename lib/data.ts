@@ -570,47 +570,56 @@ export const complianceList = [
     title: "Pharmaceutical Licensing Services",
     subtitle:
       "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
+    slug: "pharmaceutical-licensing-services",
   },
   {
     image: "/images/services/services2.jpg",
     title: "Equipment & Process Validation",
     subtitle:
       "Executing Installation, Operational, and Performance Qualification (IQ/OQ/PQ) for manufacturing and laboratory equipment to ensure consistent product quality.",
+    slug: "equipment-process-validation",
   },
   {
     image: "/images/services/services3.jpg",
     title: "Pharmaceutical Training and Webinars",
     subtitle:
       "Providing validation services aligned with FDA, EMA, and WHO guidelines for both regulated (GxP) and non-regulated (Non-GxP) environments.",
+    slug: "pharmaceutical-training-webinars",
   },
   {
     image: "/images/services/services4.jpg",
     title: "HVAC Installation and Qualification",
     subtitle:
       "Verifying controlled environments through particle count testing, airflow visualization, and temperature/humidity mapping for GMP compliance.",
+    slug: "hvac-installation-qualification",
   },
   {
     image: "/images/services/services5.jpg",
     title: "Computer System Validation (CSV)",
     subtitle:
       "Performing comprehensive validation lifecycle activities—planning, testing, documentation, and maintenance—to meet 21 CFR Part 11 and Annex 11 standards.",
+    slug: "computer-system-validation-csv",
   },
   {
     image: "/images/services/services6.jpg",
     title: "Data Migration & Qualification",
     subtitle:
       "Conducting validated data transfer processes to ensure accuracy, completeness, and traceability during system upgrades or platform transitions.",
+    slug: "data-migration-qualification",
   },
   {
     image: "/images/services/services1.jpg",
     title: "Quality Management Solutions",
     subtitle:
       "Implementing and validating QMS platforms to streamline quality processes, CAPA management, and compliance reporting.",
+    slug: "quality-management-solutions",
   },
   {
     image: "/images/services/services1.jpg",
     title: "Software Testing & Validation",
     subtitle:
       "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
+    slug: "software-testing-validation",
   },
 ];
+

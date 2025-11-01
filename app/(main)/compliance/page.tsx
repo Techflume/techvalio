@@ -1,13 +1,16 @@
-import { AnimatedDiv } from '@/components/animated-div'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { complianceList } from '@/lib/data' // Add your data array!
-import Image from 'next/image'
-import React from 'react'
+"use client";
+
+import { AnimatedDiv } from "@/components/animated-div";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { complianceList } from "@/lib/data";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 export default function CompliancePage() {
   return (
     <div>
-      {/* Banner Section */}
+      {/* ---------- Banner ---------- */}
       <section className="relative h-[320px] md:h-[380px] flex items-center justify-center bg-gradient-to-b from-primary/70 to-primary/40">
         <h1 className="font-headline text-4xl sm:text-6xl font-bold text-white text-center z-10">
           Compliance
@@ -27,10 +30,8 @@ export default function CompliancePage() {
         </div>
       </section>
 
-      {/* Grid Section */}
-      <section
-        className="relative py-16 md:py-24 bg-gradient-to-b from-background to-primary/40 overflow-hidden flex justify-center"
-      >
+      {/* ---------- Compliance Grid ---------- */}
+      <section className="relative py-16 md:py-24 bg-gradient-to-b from-background to-primary/40 overflow-hidden flex justify-center">
         <div className="container relative z-10">
           <div className="text-center mb-12 flex flex-col items-center justify-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl text-center">
@@ -50,33 +51,38 @@ export default function CompliancePage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex justify-center"
               >
-                <Card className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 bg-card/50 backdrop-blur-sm border-primary/10 flex flex-col items-center justify-center">
-                  <CardHeader className="flex flex-col items-center justify-center">
-                    <div className="mx-auto mb-4 h-16 w-16 rounded-lg overflow-hidden bg-primary/10 flex items-center justify-center">
-                      <Image
-                        src={compliance.image}
-                        alt={compliance.title}
-                        className="object-cover h-full w-full"
-                        loading="lazy"
-                        width={84}
-                        height={84}
-                      />
-                    </div>
-                    <CardTitle className="font-headline mt-2 capitalize text-center">
-                      {compliance.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex flex-col items-center justify-center">
-                    <p className="text-muted-foreground text-sm text-center">
-                      {compliance.subtitle}
-                    </p>
-                  </CardContent>
-                </Card>
+                <Link
+                  href={`/compliance/${compliance.slug}`}
+                  className="block w-full group focus:outline-none"
+                >
+                  <Card className="h-full text-center transition-all hover:shadow-xl hover:-translate-y-1 bg-card/50 backdrop-blur-sm border-primary/10 flex flex-col items-center justify-center cursor-pointer group-hover:border-primary">
+                    <CardHeader className="flex flex-col items-center justify-center">
+                      <div className="mx-auto mb-4 h-16 w-16 rounded-lg overflow-hidden bg-primary/10 flex items-center justify-center">
+                        <Image
+                          src={compliance.image}
+                          alt={compliance.title}
+                          className="object-cover h-full w-full"
+                          loading="lazy"
+                          width={84}
+                          height={84}
+                        />
+                      </div>
+                      <CardTitle className="font-headline mt-2 capitalize text-center">
+                        {compliance.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex flex-col items-center justify-center">
+                      <p className="text-muted-foreground text-sm text-center">
+                        {compliance.subtitle}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
               </AnimatedDiv>
             ))}
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
