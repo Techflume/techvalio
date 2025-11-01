@@ -6,6 +6,7 @@ import { Cog, Menu, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { navItems } from "@/lib/data";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,8 +33,7 @@ export default function Navbar() {
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-2 md:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <Cog className="h-6 w-6 text-primary" />
-          <span className="font-bold font-headline text-lg">Techvalio</span>
+          <Image src="/images/logo/techvalio-logo.webp" alt="Techvalio Logo" width={150} height={150} />
         </Link>
 
         {/* Desktop Navigation */}

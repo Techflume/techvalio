@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Cog, Github, Twitter, Linkedin, Phone, Mail, ArrowUp } from 'lucide-react';
 import { footerNav } from '@/lib/data';
 import { Button } from '../ui/button';
+import Image from 'next/image';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -18,26 +19,23 @@ const Footer = () => {
             {/* Company Info */}
             <div className="space-y-4 lg:col-span-1">
               <Link href="/" className="flex items-center space-x-2 group">
-                <Cog className="h-8 w-8 text-primary group-hover:rotate-45 transition-transform duration-300" />
-                <span className="text-xl font-bold font-headline">
-                  Techvalio
-                </span>
+                <Image src="/images/logo/blogs-bnr-white.webp" alt="Techvalio Logo" width={150} height={150} />
               </Link>
               <p className="text-sm text-slate-300 leading-relaxed">
                 <strong className="text-white">Ensuring your software is validated, compliant, and audit-ready</strong> for regulated and complex markets.
               </p>
-              
+
               {/* Contact Info */}
               <div className="space-y-3">
-                <a 
-                  href="tel:+19794524280" 
+                <a
+                  href="tel:+19794524280"
                   className="flex items-center text-sm text-slate-300 hover:text-white transition-colors group"
                 >
-                  <Phone className="h-4 w-4 mr-2 text-primary group-hover:scale-110 transition-transform" /> 
+                  <Phone className="h-4 w-4 mr-2 text-primary group-hover:scale-110 transition-transform" />
                   +1 (979) 452-4280
                 </a>
-                <a 
-                  href="mailto:info@techvalio.com" 
+                <a
+                  href="mailto:info@techvalio.com"
                   className="flex items-center text-sm text-slate-300 hover:text-white transition-colors group"
                 >
                   <Mail className="h-4 w-4 mr-2 text-primary group-hover:scale-110 transition-transform" />
@@ -55,8 +53,8 @@ const Footer = () => {
                 <ul className="space-y-3">
                   {section.items.map((item) => (
                     <li key={item.label}>
-                      <Link 
-                        href={item.href} 
+                      <Link
+                        href={item.href}
                         className="text-sm text-slate-300 hover:text-white hover:translate-x-1 transition-all duration-200 block"
                       >
                         {item.label}
@@ -74,25 +72,25 @@ const Footer = () => {
               <p className="text-sm text-slate-400 text-center sm:text-left">
                 © {new Date().getFullYear()} Techvalio – Software Validation Services. All rights reserved.
               </p>
-              
+
               {/* Social Links */}
               <div className="flex items-center space-x-4">
-                <Link 
-                  href="#" 
+                <Link
+                  href="#"
                   className="text-slate-400 hover:text-white hover:scale-110 transition-all duration-200"
                   aria-label="GitHub"
                 >
                   <Github className="h-5 w-5" />
                 </Link>
-                <Link 
-                  href="#" 
+                <Link
+                  href="#"
                   className="text-slate-400 hover:text-white hover:scale-110 transition-all duration-200"
                   aria-label="Twitter"
                 >
                   <Twitter className="h-5 w-5" />
                 </Link>
-                <Link 
-                  href="#" 
+                <Link
+                  href="#"
                   className="text-slate-400 hover:text-white hover:scale-110 transition-all duration-200"
                   aria-label="LinkedIn"
                 >
