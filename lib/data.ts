@@ -62,36 +62,36 @@ export const heroSlides = [
   {
     src: "/images/banner/banner1.jpg",
     alt: "Banner 1",
-    headline: "Validate Software.",
-    highlight: "Eliminate Costly Failures.",
+    headline: "",
+    highlight: "Why techvalio",
     description:
-      "Our Software Validation Services ensure your solutions perform flawlessly, meet all user requirements, and deliver Audit-Ready Documentation for regulated industries.",
+      "Techvalio values are designed to understand compliance challenges and create best solution with blend of technology and human ingenuity Looking for best gxp solutions to your requirements? Here is techvalio with its remarkable practices",
     cta: { label: "Get Started", href: "#get-started" },
-    secondary: { label: "Contact Us", href: "#contact" },
+    secondary: { label: "Get Free Assessment", href: "#contact" },
     features:
       "✓ Risk-Based Validation • ✓ Deep Domain Knowledge • ✓ Seamlessly Agile-Friendly",
   },
   {
     src: "/images/banner/banner2.jpg",
     alt: "Banner 2",
-    headline: "Pharma. Enterprise. Medical Devices.",
-    highlight: "Compliant From Day One.",
+    headline: "",
+    highlight: "golobal compliance",
     description:
-      "We empower pharma and medical device innovators with robust, compliant, and future-proof validation solutions tailored to global regulations.",
-    cta: { label: "Book Industry Demo", href: "#demo-industry" },
-    secondary: { label: "Talk to Pharma Expert", href: "#contact-pharma" },
+      "At techvalio, our expert solutions seamlessly integrate and harmonize global compliance frameworks, ensuring the highest level of confidence in regulatory adherence, quality excellence, data security, and integrity.",
+    cta: { label: "Explore more on global standards", href: "#demo-industry" },
+    secondary: { label: "Book free demo ", href: "#demo-industry" },
     features:
       "✓ GMP & ISO Standards • ✓ Equipment/Process Validation • ✓ Audit-Ready Reports",
   },
   {
     src: "/images/banner/banner3.jpg",
     alt: "Banner 3",
-    headline: "Effortless Compliance.",
-    highlight: "Zero Disruption.",
+    headline: "",
+    highlight: "Global Value Creation ",
     description:
-      "Achieve regulatory success with seamless software and process validation — with minimum risk, maximum business continuity.",
-    cta: { label: "Explore Solutions", href: "#compliance" },
-    secondary: { label: "Get Free Assessment", href: "#free-assessment" },
+      "Techvalio strives to establish a professional development policy based on a two-way value creation strategy, where both clients and employees are treated with dignity and respect, we are committed to fostering a versatile, growth-oriented, and harassment-free work environment that promotes collaboration and continuous learning",
+    cta: { label: "Lets create ", href: "#compliance" },
+    secondary: { label: "Book free demo ", href: "#free-assessment" },
     features:
       "✓ Data Migration • ✓ Cloud Qualification • ✓ Cleanroom/Server Solutions",
   },
