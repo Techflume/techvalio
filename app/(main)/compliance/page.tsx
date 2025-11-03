@@ -11,7 +11,7 @@ export default function CompliancePage() {
   return (
     <div>
       {/* ---------- Banner ---------- */}
-      <section className="relative h-[320px] md:h-[380px] flex items-center justify-center bg-gradient-to-b from-primary/70 to-primary/40">
+      <section className="relative h-[320px] md:h-[250px] flex items-center justify-center bg-gradient-to-b from-primary/70 to-primary/40">
         <h1 className="font-headline text-4xl sm:text-6xl font-bold text-white text-center z-10">
           Compliance
         </h1>
