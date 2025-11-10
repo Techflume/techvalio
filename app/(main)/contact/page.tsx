@@ -85,7 +85,7 @@ export default function ContactUsPage() {
             <div className="flex items-center gap-3 mb-2 text-lg font-semibold">
               <Phone className="w-6 h-6" /> Contact
             </div>
-            <div className="ml-8 text-sm">Phone: +0123-456-789<br />Email: example@gmail.com</div>
+            <div className="ml-8 text-sm">Phone: +0123-456-789<br />Email: info@techvalio.com</div>
           </div>
           <div>
             <div className="flex items-center gap-3 mb-2 text-lg font-semibold">
