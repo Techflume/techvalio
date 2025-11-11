@@ -90,9 +90,10 @@ const Footer = () => {
                   <Twitter className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/company/techvalio/"
                   className="text-slate-400 hover:text-white hover:scale-110 transition-all duration-200"
                   aria-label="LinkedIn"
+                  target="_blank"
                 >
                   <Linkedin className="h-5 w-5" />
                 </Link>
