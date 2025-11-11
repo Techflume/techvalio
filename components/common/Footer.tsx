@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { Cog, Github, Twitter, Linkedin, Phone, Mail, ArrowUp } from 'lucide-react';
+import {  Twitter, Linkedin, Phone, Mail, ArrowUp, Instagram, Youtube } from 'lucide-react';
 import { footerNav } from '@/lib/data';
 import { Button } from '../ui/button';
 import Image from 'next/image';
@@ -80,7 +80,14 @@ const Footer = () => {
                   className="text-slate-400 hover:text-white hover:scale-110 transition-all duration-200"
                   aria-label="GitHub"
                 >
-                  <Github className="h-5 w-5" />
+                  <Youtube className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="#"
+                  className="text-slate-400 hover:text-white hover:scale-110 transition-all duration-200"
+                  aria-label="GitHub"
+                >
+                  <Instagram className="h-5 w-5" />
                 </Link>
                 <Link
                   href="#"
