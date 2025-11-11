@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Head from "next/head";  // Import Head
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Techvalion - Elevate Your Tech Solutions",
   description: "Techvalion is your trusted partner for innovative technology solutions, delivering excellence and driving success in the digital age.",
   other: [
@@ -25,7 +25,6 @@ export const metadata = {
   ],
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,12 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta name="google-site-verification" content="6eqCpENKb12jsMX5YxcXqN-nnUbMcDtmhF_h-s" />
-      </Head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
-         <Analytics />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
