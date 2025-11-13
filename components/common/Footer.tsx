@@ -32,7 +32,7 @@ const Footer = () => {
                   className="flex items-center text-sm text-slate-300 hover:text-white transition-colors group"
                 >
                   <Phone className="h-4 w-4 mr-2 text-primary group-hover:scale-110 transition-transform" />
-                  +1 (979) 452-4280
+                  +91 99648-43644
                 </a>
                 <a
                   href="mailto:info@techvalio.com"

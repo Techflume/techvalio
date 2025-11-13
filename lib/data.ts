@@ -63,10 +63,10 @@ export const heroSlides = [
     src: "/images/banner/banner1.jpg",
     alt: "Banner 1",
     headline: "",
-    highlight: "Why techvalio",
+    highlight: "Comprehensive Solutions for Industry Excellence",
     description:
-      "Techvalio values are designed to understand compliance challenges and create best solution with blend of technology and human ingenuity Looking for best gxp solutions to your requirements? Here is techvalio with its remarkable practices",
-    cta: { label: "Get Started", href: "#get-started" },
+      "Techvalio offers specialized services in Computer System Validation, Software Testing, Data Migration, Equipment Qualification, Pharmaceutical Licensing, and training. Trust us to enhance your compliance and operational efficiency.",
+    cta: { label: "Explore Our Services", href: "#get-started" },
     secondary: { label: "Get Free Assessment", href: "#contact" },
     features:
       "✓ Risk-Based Validation • ✓ Deep Domain Knowledge • ✓ Seamlessly Agile-Friendly",
@@ -75,10 +75,10 @@ export const heroSlides = [
     src: "/images/banner/banner2.jpg",
     alt: "Banner 2",
     headline: "",
-    highlight: "golobal compliance",
+    highlight: "Global Compliance Made Seamless",
     description:
       "At techvalio, our expert solutions seamlessly integrate and harmonize global compliance frameworks, ensuring the highest level of confidence in regulatory adherence, quality excellence, data security, and integrity.",
-    cta: { label: "Explore more on global standards", href: "#demo-industry" },
+    cta: { label: "Explore Our Global Standards", href: "#demo-industry" },
     secondary: { label: "Book free demo ", href: "#demo-industry" },
     features:
       "✓ GMP & ISO Standards • ✓ Equipment/Process Validation • ✓ Audit-Ready Reports",
@@ -87,10 +87,10 @@ export const heroSlides = [
     src: "/images/banner/banner3.jpg",
     alt: "Banner 3",
     headline: "",
-    highlight: "Global Value Creation ",
+    highlight: "Empowering Industries with Compliance Solutions",
     description:
-      "Techvalio strives to establish a professional development policy based on a two-way value creation strategy, where both clients and employees are treated with dignity and respect, we are committed to fostering a versatile, growth-oriented, and harassment-free work environment that promotes collaboration and continuous learning",
-    cta: { label: "Lets create ", href: "#compliance" },
+      "Techvalio partners with diverse industries to provide expert compliance solutions, ensuring the highest standards in regulatory adherence and operational excellence. Trust us to enhance your confidence and integrity in a complex regulatory landscape.",
+    cta: { label: "Explore Our Industry Solutions", href: "#compliance" },
     secondary: { label: "Book free demo ", href: "#free-assessment" },
     features:
       "✓ Data Migration • ✓ Cloud Qualification • ✓ Cleanroom/Server Solutions",
@@ -500,63 +500,63 @@ export const servicesList = [
 
 export const industryList = [
   {
-    image: "/images/services/services1.jpg",
-    title: "Lifesciences",
-    link: "/life-sciences",
-    subtitle:
-      "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
-  },
-  {
-    image: "/images/services/services2.jpg",
-    title: "Food & Beverages",
-    link: "/food-and-beverage-industry",
-    subtitle:
-      "Executing Installation, Operational, and Performance Qualification (IQ/OQ/PQ) for manufacturing and laboratory equipment to ensure consistent product quality.",
-  },
-  {
-    image: "/images/services/services3.jpg",
-    title: "Healthcare",
-    link: "/healthcare-industry",
-    subtitle:
-      "Providing validation services aligned with FDA, EMA, and WHO guidelines for both regulated (GxP) and non-regulated (Non-GxP) environments.",
-  },
-  {
-    image: "/images/services/services5.jpg",
-    title: "Medical Devices",
-    link: "/medical-devices",
-    subtitle:
-      "Performing comprehensive validation lifecycle activities—planning, testing, documentation, and maintenance—to meet 21 CFR Part 11 and Annex 11 standards.",
-  },
-  {
-    image: "/images/services/services6.jpg",
-    title: "Pharmaceuticals",
-    link: "/pharmaceuticals-industry",
-    subtitle:
-      "Conducting validated data transfer processes to ensure accuracy, completeness, and traceability during system upgrades or platform transitions.",
-  },
-  {
-    image: "/images/services/services1.jpg",
+    image: "/images/industry/biologics.png",
     title: "Biologics",
     link: "/biologic-industry",
     subtitle:
       "Implementing and validating QMS platforms to streamline quality processes, CAPA management, and compliance reporting.",
   },
   {
-    image: "/images/services/services1.jpg",
+    image: "/images/industry/life-science.png",
+    title: "Lifesciences",
+    link: "/life-sciences",
+    subtitle:
+      "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
+  },
+  {
+    image: "/images/industry/fnb.png",
+    title: "Food & Beverages",
+    link: "/food-and-beverage-industry",
+    subtitle:
+      "Executing Installation, Operational, and Performance Qualification (IQ/OQ/PQ) for manufacturing and laboratory equipment to ensure consistent product quality.",
+  },
+  {
+    image: "/images/industry/healthcare.png",
+    title: "Healthcare",
+    link: "/healthcare-industry",
+    subtitle:
+      "Providing validation services aligned with FDA, EMA, and WHO guidelines for both regulated (GxP) and non-regulated (Non-GxP) environments.",
+  },
+  {
+    image: "/images/industry/medicaldevice.png",
+    title: "Medical Devices",
+    link: "/medical-devices",
+    subtitle:
+      "Performing comprehensive validation lifecycle activities—planning, testing, documentation, and maintenance—to meet 21 CFR Part 11 and Annex 11 standards.",
+  },
+  {
+    image: "/images/industry/pharma.png",
+    title: "Pharmaceuticals",
+    link: "/pharmaceuticals-industry",
+    subtitle:
+      "Conducting validated data transfer processes to ensure accuracy, completeness, and traceability during system upgrades or platform transitions.",
+  },
+  {
+    image: "/images/industry/Biotechnology.png",
     title: "Biotechnology",
     link: "/biotechnology-industry",
     subtitle:
       "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
   },
   {
-    image: "/images/services/services1.jpg",
+    image: "/images/industry/Nutraceuticals.png",
     title: "Nutraceuticals",
     link: "/nutraceuticals",
     subtitle:
       "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
   },
   {
-    image: "/images/services/services1.jpg",
+    image: "/images/industry/Cannabis.png",
     title: "Cannabis",
     link: "/cannabis-industry",
     subtitle:
