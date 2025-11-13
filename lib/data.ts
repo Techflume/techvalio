@@ -500,63 +500,63 @@ export const servicesList = [
 
 export const industryList = [
   {
-    image: "/images/services/services1.jpg",
-    title: "Lifesciences",
-    link: "/life-sciences",
-    subtitle:
-      "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
-  },
-  {
-    image: "/images/services/services2.jpg",
-    title: "Food & Beverages",
-    link: "/food-and-beverage-industry",
-    subtitle:
-      "Executing Installation, Operational, and Performance Qualification (IQ/OQ/PQ) for manufacturing and laboratory equipment to ensure consistent product quality.",
-  },
-  {
-    image: "/images/services/services3.jpg",
-    title: "Healthcare",
-    link: "/healthcare-industry",
-    subtitle:
-      "Providing validation services aligned with FDA, EMA, and WHO guidelines for both regulated (GxP) and non-regulated (Non-GxP) environments.",
-  },
-  {
-    image: "/images/services/services5.jpg",
-    title: "Medical Devices",
-    link: "/medical-devices",
-    subtitle:
-      "Performing comprehensive validation lifecycle activities—planning, testing, documentation, and maintenance—to meet 21 CFR Part 11 and Annex 11 standards.",
-  },
-  {
-    image: "/images/services/services6.jpg",
-    title: "Pharmaceuticals",
-    link: "/pharmaceuticals-industry",
-    subtitle:
-      "Conducting validated data transfer processes to ensure accuracy, completeness, and traceability during system upgrades or platform transitions.",
-  },
-  {
-    image: "/images/services/services1.jpg",
+    image: "/images/industry/biologics.png",
     title: "Biologics",
     link: "/biologic-industry",
     subtitle:
       "Implementing and validating QMS platforms to streamline quality processes, CAPA management, and compliance reporting.",
   },
   {
-    image: "/images/services/services1.jpg",
+    image: "/images/industry/life-science.png",
+    title: "Lifesciences",
+    link: "/life-sciences",
+    subtitle:
+      "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
+  },
+  {
+    image: "/images/industry/fnb.png",
+    title: "Food & Beverages",
+    link: "/food-and-beverage-industry",
+    subtitle:
+      "Executing Installation, Operational, and Performance Qualification (IQ/OQ/PQ) for manufacturing and laboratory equipment to ensure consistent product quality.",
+  },
+  {
+    image: "/images/industry/healthcare.png",
+    title: "Healthcare",
+    link: "/healthcare-industry",
+    subtitle:
+      "Providing validation services aligned with FDA, EMA, and WHO guidelines for both regulated (GxP) and non-regulated (Non-GxP) environments.",
+  },
+  {
+    image: "/images/industry/medicaldevice.png",
+    title: "Medical Devices",
+    link: "/medical-devices",
+    subtitle:
+      "Performing comprehensive validation lifecycle activities—planning, testing, documentation, and maintenance—to meet 21 CFR Part 11 and Annex 11 standards.",
+  },
+  {
+    image: "/images/industry/pharma.png",
+    title: "Pharmaceuticals",
+    link: "/pharmaceuticals-industry",
+    subtitle:
+      "Conducting validated data transfer processes to ensure accuracy, completeness, and traceability during system upgrades or platform transitions.",
+  },
+  {
+    image: "/images/industry/Biotechnology.png",
     title: "Biotechnology",
     link: "/biotechnology-industry",
     subtitle:
       "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
   },
   {
-    image: "/images/services/services1.jpg",
+    image: "/images/industry/Nutraceuticals.png",
     title: "Nutraceuticals",
     link: "/nutraceuticals",
     subtitle:
       "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
   },
   {
-    image: "/images/services/services1.jpg",
+    image: "/images/industry/Cannabis.png",
     title: "Cannabis",
     link: "/cannabis-industry",
     subtitle:

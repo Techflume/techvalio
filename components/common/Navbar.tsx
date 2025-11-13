@@ -90,7 +90,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-2">
             <Phone className="h-4 w-4 text-muted-foreground" />
             <a href="tel:+19794524280" className="text-sm font-medium hover:underline">
-              +1 (979) 452-4280
+             +91 99648-43644
             </a>
           </div>
           <Button className="hidden md:inline-flex" size="sm" asChild>
@@ -174,7 +174,7 @@ export default function Navbar() {
                   className="flex items-center gap-2 text-sm font-medium hover:underline"
                 >
                   <Phone className="h-4 w-4 text-muted-foreground" />
-                  +1 (979) 452-4280
+                 +91 99648-43644
                 </a>
                 <Button className="w-full" asChild>
                   <Link href="#get-quote" onClick={() => setIsMobileMenuOpen(false)}>

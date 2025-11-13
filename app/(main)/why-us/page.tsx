@@ -51,15 +51,15 @@ export default function WhyUsPage() {
         />
         <div className="absolute inset-0 bg-black/60 z-0"></div>
         <motion.div
-          className="relative z-10 text-center"
+          className="relative z-10 text-center gap-6"
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <h1 className="text-white font-bold text-4xl md:text-5xl tracking-tight mb-2">
+          <h1 className="text-white font-bold text-4xl md:text-5xl tracking-tight mb-8">
             Why Choose Techvalio?
           </h1>
-          <div className="text-primary-foreground text-md max-w-xl mx-auto font-medium">
+          <div className=" text-gray-200 text-md max-w-xl mx-auto font-medium">
             The difference between compliant and confident. <br className="hidden sm:block" /> The Techvalio edge for regulated industries and innovators.
           </div>
         </motion.div>

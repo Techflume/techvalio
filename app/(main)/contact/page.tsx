@@ -15,6 +15,7 @@ import {
   Twitter,
   Instagram,
   Youtube,
+  Linkedin,
 } from "lucide-react";
 
 
@@ -79,7 +80,7 @@ export default function ContactUsPage() {
             <div className="flex items-center gap-3 mb-2 text-lg font-semibold">
               <MapPin className="w-6 h-6" /> Address
             </div>
-            <div className="ml-8 text-sm">4517 Washington Ave.<br />Manchester, Kentucky 39495</div>
+            <div className="ml-8 text-sm">No 1265 Sukhi ,<br />SMV layout kengeri Upanagara ,<br />Bangaluru 560060</div>
           </div>
           <div>
             <div className="flex items-center gap-3 mb-2 text-lg font-semibold">
@@ -96,10 +97,11 @@ export default function ContactUsPage() {
           <div>
             <div className="font-bold text-lg mb-2">Stay Connected</div>
             <div className="flex gap-3 ml-2">
+              <a href="https://www.linkedin.com/company/techvalio" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition"><Linkedin className="w-5 h-5" /></a>
               <a href="#" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition"><Facebook className="w-5 h-5" /></a>
-              <a href="#" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition"><Twitter className="w-5 h-5" /></a>
+              <a href="https://x.com/techvalio" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition"><Twitter className="w-5 h-5" /></a>
               <a href="#" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition"><Instagram className="w-5 h-5" /></a>
-              <a href="#" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition"><Youtube className="w-5 h-5" /></a>
+              <a href="https://www.youtube.com/@Techvalio" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition"><Youtube className="w-5 h-5" /></a>
             </div>
           </div>
         </motion.div>
@@ -143,11 +145,7 @@ export default function ContactUsPage() {
         </div>
       </section>
 
-      <footer className="bg-muted py-9 text-muted-foreground text-center mt-8">
-        <div className="container mx-auto">
-          © {new Date().getFullYear()} <span className="font-semibold text-primary">YourBrand</span>. All Rights Reserved.
-        </div>
-      </footer>
+     
     </>
   );
 }
