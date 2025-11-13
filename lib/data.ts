@@ -63,10 +63,10 @@ export const heroSlides = [
     src: "/images/banner/banner1.jpg",
     alt: "Banner 1",
     headline: "",
-    highlight: "Why techvalio",
+    highlight: "Comprehensive Solutions for Industry Excellence",
     description:
-      "Techvalio values are designed to understand compliance challenges and create best solution with blend of technology and human ingenuity Looking for best gxp solutions to your requirements? Here is techvalio with its remarkable practices",
-    cta: { label: "Get Started", href: "#get-started" },
+      "Techvalio offers specialized services in Computer System Validation, Software Testing, Data Migration, Equipment Qualification, Pharmaceutical Licensing, and training. Trust us to enhance your compliance and operational efficiency.",
+    cta: { label: "Explore Our Services", href: "#get-started" },
     secondary: { label: "Get Free Assessment", href: "#contact" },
     features:
       "✓ Risk-Based Validation • ✓ Deep Domain Knowledge • ✓ Seamlessly Agile-Friendly",
@@ -75,10 +75,10 @@ export const heroSlides = [
     src: "/images/banner/banner2.jpg",
     alt: "Banner 2",
     headline: "",
-    highlight: "golobal compliance",
+    highlight: "Global Compliance Made Seamless",
     description:
       "At techvalio, our expert solutions seamlessly integrate and harmonize global compliance frameworks, ensuring the highest level of confidence in regulatory adherence, quality excellence, data security, and integrity.",
-    cta: { label: "Explore more on global standards", href: "#demo-industry" },
+    cta: { label: "Explore Our Global Standards", href: "#demo-industry" },
     secondary: { label: "Book free demo ", href: "#demo-industry" },
     features:
       "✓ GMP & ISO Standards • ✓ Equipment/Process Validation • ✓ Audit-Ready Reports",
@@ -87,10 +87,10 @@ export const heroSlides = [
     src: "/images/banner/banner3.jpg",
     alt: "Banner 3",
     headline: "",
-    highlight: "Global Value Creation ",
+    highlight: "Empowering Industries with Compliance Solutions",
     description:
-      "Techvalio strives to establish a professional development policy based on a two-way value creation strategy, where both clients and employees are treated with dignity and respect, we are committed to fostering a versatile, growth-oriented, and harassment-free work environment that promotes collaboration and continuous learning",
-    cta: { label: "Lets create ", href: "#compliance" },
+      "Techvalio partners with diverse industries to provide expert compliance solutions, ensuring the highest standards in regulatory adherence and operational excellence. Trust us to enhance your confidence and integrity in a complex regulatory landscape.",
+    cta: { label: "Explore Our Industry Solutions", href: "#compliance" },
     secondary: { label: "Book free demo ", href: "#free-assessment" },
     features:
       "✓ Data Migration • ✓ Cloud Qualification • ✓ Cleanroom/Server Solutions",
