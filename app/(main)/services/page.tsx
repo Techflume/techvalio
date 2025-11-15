@@ -45,14 +45,13 @@ export default function ServicesPage() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {servicesList.map((service, index) => (
               <AnimatedDiv
-                key={service.title}
+                key={service.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                {/* <Link href={`/services/${service.slug}`} className="block group focus:outline-none"> */}
-                <Link href={`/services/pharmaceutical-licensing-services`} className="block group focus:outline-none">
+                <Link href={`/services/${service.url}`} className="block group focus:outline-none">
                   <Card className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 bg-card/50 backdrop-blur-sm border-primary/10 flex flex-col items-center justify-center">
                     <CardHeader className="flex flex-col items-center">
                       <div className="mx-auto mb-4 h-16 w-16 rounded-lg overflow-hidden bg-primary/10 flex items-center justify-center">
@@ -63,7 +62,6 @@ export default function ServicesPage() {
                           loading="lazy"
                           width={84}
                           height={84}
-
                         />
                       </div>
                       <CardTitle className="font-headline mt-2 capitalize">
@@ -71,15 +69,14 @@ export default function ServicesPage() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground text-sm">
-                        {service.subtitle}
-                      </p>
+                      <p className="text-muted-foreground text-sm">{service.subtitle}</p>
                     </CardContent>
                   </Card>
                 </Link>
               </AnimatedDiv>
             ))}
           </div>
+
         </div>
       </section>
     </div>

@@ -428,48 +428,35 @@ export const popularCategories = [
 // /lib/data.js
 export const servicesList = [
   {
-    image: "/images/services/services1.jpg",
-    title: "Pharmaceutical Licensing Services",
-    subtitle:
-      "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
-  },
-  {
-    image: "/images/services/services2.jpg",
-    title: "Equipment & Process Validation",
-    subtitle:
-      "Executing Installation, Operational, and Performance Qualification (IQ/OQ/PQ) for manufacturing and laboratory equipment to ensure consistent product quality.",
-  },
-  {
-    image: "/images/services/services3.jpg",
-    title: "Pharmaceutical Training and Webinars",
-    subtitle:
-      "Providing validation services aligned with FDA, EMA, and WHO guidelines for both regulated (GxP) and non-regulated (Non-GxP) environments.",
-  },
-  {
-    image: "/images/services/services4.jpg",
-    title: "HVAC Installation and Qualification",
-    subtitle:
-      "Verifying controlled environments through particle count testing, airflow visualization, and temperature/humidity mapping for GMP compliance.",
-  },
-  {
+    id: 1,
+    url: "computer-system-validation",
     image: "/images/services/services5.jpg",
     title: "Computer System Validation (CSV)",
     subtitle:
       "Performing comprehensive validation lifecycle activities—planning, testing, documentation, and maintenance—to meet 21 CFR Part 11 and Annex 11 standards.",
   },
+
   {
+    id: 2,
+    url: "equipment-and-process-validation",
+    image: "/images/services/services2.jpg",
+    title: "Equipment & Process Validation",
+    subtitle:
+      "Executing Installation, Operational, and Performance Qualification (IQ/OQ/PQ) for manufacturing and laboratory equipment to ensure consistent product quality.",
+  },
+
+  {
+    id: 3,
+    url: "data-migration-and-qualification",
     image: "/images/services/services6.jpg",
     title: "Data Migration & Qualification",
     subtitle:
       "Conducting validated data transfer processes to ensure accuracy, completeness, and traceability during system upgrades or platform transitions.",
   },
+
   {
-    image: "/images/services/services1.jpg",
-    title: "Quality Management Solutions",
-    subtitle:
-      "Implementing and validating QMS platforms to streamline quality processes, CAPA management, and compliance reporting.",
-  },
-  {
+     id: 4,
+    url: "software-testing-and-validation",
     image: "/images/services/services1.jpg",
     title: "Software Testing & Validation",
     subtitle:
@@ -477,6 +464,8 @@ export const servicesList = [
   },
 
   {
+    id: 5,
+    url: "data-centre-and-server-qualification",
     image: "/images/services/services1.jpg",
     title: "Data Centre & Server Qualification",
     subtitle:
@@ -484,18 +473,53 @@ export const servicesList = [
   },
 
   {
+    id: 6,
+    url: "pharmaceutical-licensing-services",
     image: "/images/services/services1.jpg",
-    title: "Training & Webinars",
+    title: "Pharmaceutical Licensing Services",
     subtitle:
-      "Offering specialized training and live webinars on CSV, GxP compliance, and QA best practices to build organizational expertise and readiness.",
+      "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
   },
+  //* ------------------------------------------------------
 
-  {
-    image: "/images/services/services1.jpg",
-    title: "Enterprise Solutions Validation",
-    subtitle:
-      "Ensuring ERP, CRM, and LIMS systems meet functional, performance, and compliance requirements for enterprise-level operations.",
-  },
+
+  // {
+  //   image: "/images/services/services3.jpg",
+  //   title: "Pharmaceutical Training and Webinars",
+  //   subtitle:
+  //     "Providing validation services aligned with FDA, EMA, and WHO guidelines for both regulated (GxP) and non-regulated (Non-GxP) environments.",
+  // },
+  // {
+  //   image: "/images/services/services4.jpg",
+  //   title: "HVAC Installation and Qualification",
+  //   subtitle:
+  //     "Verifying controlled environments through particle count testing, airflow visualization, and temperature/humidity mapping for GMP compliance.",
+  // },
+  
+ 
+  // {
+  //   image: "/images/services/services1.jpg",
+  //   title: "Quality Management Solutions",
+  //   subtitle:
+  //     "Implementing and validating QMS platforms to streamline quality processes, CAPA management, and compliance reporting.",
+  // },
+  // 
+
+
+
+  // {
+  //   image: "/images/services/services1.jpg",
+  //   title: "Training & Webinars",
+  //   subtitle:
+  //     "Offering specialized training and live webinars on CSV, GxP compliance, and QA best practices to build organizational expertise and readiness.",
+  // },
+
+  // {
+  //   image: "/images/services/services1.jpg",
+  //   title: "Enterprise Solutions Validation",
+  //   subtitle:
+  //     "Ensuring ERP, CRM, and LIMS systems meet functional, performance, and compliance requirements for enterprise-level operations.",
+  // },
 ];
 
 export const industryList = [

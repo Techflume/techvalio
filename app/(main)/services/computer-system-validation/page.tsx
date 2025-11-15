@@ -7,95 +7,118 @@ import { MotionDiv, MotionP, MotionH1 } from "@/components/common/MotionDiv";
 // ------------------------
 const service = {
   seo: {
-    title: "Pharmaceutical Licensing Services - Techvalio",
+    title: "Computer System Validation (CSV) - Techvalio",
     description:
-      "Techvalio delivers pharmaceutical validation, regulatory compliance, QA documentation, and end-to-end GxP support.",
+      "Techvalio provides comprehensive Computer System Validation (CSV) services ensuring compliance with FDA 21 CFR Part 11, EU Annex 11, and GxP guidelines.",
     keywords:
-      "pharmaceutical validation, software validation, FDA compliance, GxP validation, pharma licensing",
+      "CSV, computer system validation, FDA 21 CFR Part 11, Annex 11, GxP validation, pharma compliance",
   },
 
   hero: {
-    title: "Pharmaceutical Licensing Services",
-    img: "/images/services/services1.jpg",
-    alt: "Pharmaceutical Licensing",
+    title: "Computer System Validation (CSV)",
+    img: "/images/services/csv-hero.jpg",
+    alt: "Computer System Validation",
   },
 
   intro:
-    "Delivering end-to-end software verification to ensure reliability, data integrity, and regulatory compliance across all development phases.",
+    "Computer System Validation (CSV) ensures that computer-based systems consistently perform as intended while meeting regulatory standards such as FDA 21 CFR Part 11, GxP, and EU Annex 11 throughout their lifecycle.",
 
   features: [
-    "End-to-end compliance with global standards (FDA, EMA, WHO)",
-    "Audit-ready validation protocols",
+    "USFDA,21 CFR part11,Eu Annex 1111,CFR 21 part 820 ",
+    "End to End Validation Strategies to achieve Global regulatory compliance ",
     "Support for pharma, biotech, and innovations",
-    "Automated documentation workflows",
+    "Emerging to Pharmaceutical, Life science, Healthcare, medical device and Tech innovations    ",
   ],
 
   sections: [
     {
-      heading: "Why Choose Techvalio?",
-      text: `Our team combines industry expertise with advanced validation technologies. 
-      We create solutions that meet requirements and help your teams innovate confidently.`,
-      img: "/images/banner/banner2.jpg",
+      heading: "What is Computer System Validation?",
+      text: `CSV is a systematic, documented process that confirms a computer system performs accurately, reliably, 
+      and consistently while meeting regulatory requirements. It ensures the integrity of electronic records and electronic signatures.`,
+      img: "/images/services/csv-what.jpg",
     },
     {
-      heading: "Our Approach: Agile, Scalable, Personalized",
-      text: `From assessment to delivery and support, we tailor the validation lifecycle to minimize risk and ensure compliance.`,
+      heading: "Why Computer System Validation Matters",
+      text: `CSV ensures that regulated industries such as pharmaceuticals, healthcare, life sciences, 
+      and medical devices operate with accuracy, compliance, and data integrity.
+
+Key reasons CSV is important:
+• Ensure Compliance – Meets FDA 21 CFR Part 11, EU Annex 11, and global regulatory standards.
+• Enhance Data Integrity – Guarantees that data is complete, consistent, and protected.
+• Mitigate Risks – Identifies potential failures early to prevent compliance risks and system issues.`,
     },
   ],
 
   offerings: [
     {
-      title: "Regulatory Consulting",
-      desc: "Expert guidance on dossiers, process mapping, and globally recognized compliance documentation.",
+      title: "Regulatory Compliance",
+      desc: "Full compliance with FDA 21 CFR Part 11, EU Annex 11, GAMP5, and GxP standards.",
     },
     {
-      title: "Validation & QA Services",
-      desc: "Comprehensive risk analysis, protocol design, test execution, and ongoing system monitoring.",
+      title: "Complete CSV Documentation",
+      desc: "Validation Plans, URS, FRS, IQ/OQ/PQ protocols, Traceability Matrix, and summary reports.",
     },
     {
-      title: "End-to-End Support",
-      desc: "From GxP workshops to long-term support—with continuous improvement at every step.",
+      title: "Ongoing Revalidation",
+      desc: "Continuous system revalidation as your system evolves, ensuring long-term compliance.",
     },
   ],
 
   process: [
     {
-      title: "Discovery",
-      desc: "We analyze your systems, workflows, and compliance needs.",
+      title: "Planning & Documentation",
+      desc: "We create validation plans, scope, user requirements, and documentation strategies.",
     },
     {
-      title: "Gap Analysis",
-      desc: "We identify missing validation and documentation requirements.",
+      title: "Requirements Gathering",
+      desc: "We collaborate with your team to define User Requirements (URS) and system expectations.",
     },
     {
-      title: "Testing & Documentation",
-      desc: "Hands-on verification, test execution, and audit-ready documentation.",
+      title: "Risk Assessment",
+      desc: "We analyze risks to prioritize validation activities and minimize compliance gaps.",
     },
     {
-      title: "Launch & Support",
-      desc: "Go live confidently with long-term compliance support.",
+      title: "Validation Testing (IQ/OQ/PQ)",
+      desc: "We perform Installation Qualification, Operational Qualification, and Performance Qualification.",
+    },
+    {
+      title: "Documentation & Reporting",
+      desc: "Every step is thoroughly documented to maintain audit-ready compliance.",
+    },
+    {
+      title: "Training & Support",
+      desc: "Your team receives training to manage CSV processes and maintain compliance.",
+    },
+    {
+      title: "Revalidation & Continuous Support",
+      desc: "We ensure your system stays compliant as it updates or scales over time.",
     },
   ],
 
   testimonial: {
     quote:
-      "“After switching to Techvalio’s pharmaceutical validation, our audit process became 2x faster and all documentation was instantly QC-ready.”",
-    name: "Dr. Rachel Verma",
-    role: "Regulatory Lead, PharmaNova",
-    avatar: "/images/avatar-sample.png",
+      "“Techvalio ensured our systems passed every audit without a single deviation. Their CSV documentation and testing are exceptionally thorough.”",
+    name: "Anita Kulkarni",
+    role: "QA Director, MedLife Sciences",
+    avatar: "/images/avatar-female.png",
   },
 
   faq: [
     {
-      q: "How long does a typical validation project take?",
-      a: "Most pharmaceutical validations take 6–12 weeks depending on system complexity.",
+      q: "What is included in Computer System Validation?",
+      a: "CSV includes planning, risk assessment, requirements, IQ/OQ/PQ testing, documentation, reporting, and continuous validation support.",
     },
     {
-      q: "Do you provide post-validation maintenance?",
-      a: "Yes, Techvalio offers periodic audits, documentation updates, and continuous compliance support.",
+      q: "Which industries need CSV?",
+      a: "Industries such as pharmaceuticals, medical devices, biotechnology, and healthcare are required to follow CSV guidelines.",
+    },
+    {
+      q: "Does Techvalio support FDA 21 CFR Part 11 compliance?",
+      a: "Yes. Our CSV process ensures full compliance with 21 CFR Part 11, EU Annex 11, and other GxP standards.",
     },
   ],
 };
+
 
 export const metadata = {
   title: service.seo.title,
@@ -223,32 +246,34 @@ export default function Page() {
         </div>
       </section>
 
-      {/* VALIDATION PROCESS */}
-      <section className="bg-muted/30 py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-            Our Validation Process
-          </h2>
+     {/* VALIDATION PROCESS */}
+<section className="bg-muted/30 py-16">
+  <div className="container mx-auto px-4">
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
+      Our Validation Process
+    </h2>
 
-          <div className="flex flex-col md:flex-row md:justify-center md:gap-8 gap-6">
-            {service.process.map((step, i) => (
-              <MotionDiv
-                key={i}
-                className="bg-white shadow-lg rounded-xl px-6 py-8 text-center border"
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: i * 0.12 }}
-              >
-                <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold mb-3">
-                  {i + 1}
-                </div>
-                <h3 className="font-bold text-base mb-2">{step.title}</h3>
-                <p className="text-muted-foreground text-xs">{step.desc}</p>
-              </MotionDiv>
-            ))}
+    {/* 3 cards per row */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {service.process.map((step, i) => (
+        <MotionDiv
+          key={i}
+          className="bg-white shadow-lg rounded-xl px-6 py-8 text-center border"
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: i * 0.12 }}
+        >
+          <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold mb-3">
+            {i + 1}
           </div>
-        </div>
-      </section>
+          <h3 className="font-bold text-base mb-2">{step.title}</h3>
+          <p className="text-muted-foreground text-xs">{step.desc}</p>
+        </MotionDiv>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* TESTIMONIAL */}
       <section className="container mx-auto py-16 px-4 flex justify-center">
