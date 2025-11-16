@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { MotionDiv, MotionP, MotionH1 } from "@/components/common/MotionDiv";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import Link from "next/link";
 
 // ------------------------
 // Page Data (SERVER SIDE)
@@ -16,7 +18,7 @@ const service = {
 
   hero: {
     title: "Computer System Validation (CSV)",
-    img: "/images/services/csv-hero.jpg",
+    img: "/images/services/banner/Computer System Validation banner.png",
     alt: "Computer System Validation",
   },
 
@@ -34,20 +36,24 @@ const service = {
     {
       heading: "What is Computer System Validation?",
       text: `CSV is a systematic, documented process that confirms a computer system performs accurately, reliably, 
-      and consistently while meeting regulatory requirements. It ensures the integrity of electronic records and electronic signatures.`,
-      img: "/images/services/csv-what.jpg",
+    and consistently while meeting regulatory requirements. It ensures the integrity of electronic records and electronic signatures.`,
     },
     {
       heading: "Why Computer System Validation Matters",
       text: `CSV ensures that regulated industries such as pharmaceuticals, healthcare, life sciences, 
-      and medical devices operate with accuracy, compliance, and data integrity.
+    and medical devices operate with accuracy, compliance, and data integrity.`,
 
-Key reasons CSV is important:
-• Ensure Compliance – Meets FDA 21 CFR Part 11, EU Annex 11, and global regulatory standards.
-• Enhance Data Integrity – Guarantees that data is complete, consistent, and protected.
-• Mitigate Risks – Identifies potential failures early to prevent compliance risks and system issues.`,
+      keyHeading: "Key reasons CSV is important:",
+      keys: [
+        "Ensure Compliance – Meets FDA 21 CFR Part 11, EU Annex 11, and global regulatory standards.",
+        "Enhance Data Integrity – Guarantees that data is complete, consistent, and protected.",
+        "Mitigate Risks – Identifies potential failures early to prevent compliance risks and system issues.",
+      ],
     },
   ],
+
+  fullWidthImage: "/images/services/diagrame.png",
+
 
   offerings: [
     {
@@ -95,13 +101,44 @@ Key reasons CSV is important:
     },
   ],
 
-  testimonial: {
-    quote:
-      "“Techvalio ensured our systems passed every audit without a single deviation. Their CSV documentation and testing are exceptionally thorough.”",
-    name: "Anita Kulkarni",
-    role: "QA Director, MedLife Sciences",
-    avatar: "/images/avatar-female.png",
-  },
+  testimonial: [
+    {
+      quote:
+        "“Techvalio ensured our systems passed every audit without a single deviation. Their CSV documentation and testing are exceptionally thorough.”",
+      name: "Anita Kulkarni",
+      role: "QA Director, MedLife Sciences",
+      avatar: "/images/avatar-female.png",
+    },
+    {
+      quote:
+        "“The Techvalio team transformed our validation lifecycle. Their SRS, risk assessment, and IQ/OQ/PQ execution were precise and audit-ready.”",
+      name: "Dr. Vikram Rao",
+      role: "Validation Lead, CurePath Pharma",
+      avatar: "/images/avatar-male.png",
+    },
+    {
+      quote:
+        "“Their CSV approach is the best we’ve experienced. Documentation is clean, structured, and fully compliant with 21 CFR Part 11.”",
+      name: "Neha Kapoor",
+      role: "Regulatory Manager, BioZen Labs",
+      avatar: "/images/avatar-female.png",
+    },
+    {
+      quote:
+        "“Techvalio helped standardize our entire software validation process. The traceability and testing discipline were outstanding.”",
+      name: "Amit Sharma",
+      role: "IT Compliance Head, NovaCure",
+      avatar: "/images/avatar-male.png",
+    },
+    {
+      quote:
+        "“Their expertise in GxP and system validation gave us complete confidence during our FDA inspection—zero observations.”",
+      name: "Riya Menon",
+      role: "Quality Systems Manager, Sterling Pharma",
+      avatar: "/images/avatar-female.png",
+    },
+  ],
+
 
   faq: [
     {
@@ -172,57 +209,107 @@ export default function Page() {
           {service.features.map((feature, i) => (
             <MotionDiv
               key={i}
-              className="bg-card border rounded-xl p-6 shadow-md flex items-start gap-4"
+              className="group bg-card border rounded-xl p-6 shadow-md flex items-start gap-4 
+                 transition-all duration-300 
+                 hover:bg-primary/10 hover:-translate-y-1 hover:shadow-xl"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: i * 0.15 }}
             >
-              <span className="h-8 w-8 flex items-center justify-center bg-primary/10 text-primary font-bold rounded-full">
+              {/* Number Circle */}
+              <span className="h-12 w-12 flex items-center justify-center 
+                       bg-primary/10 text-primary font-bold rounded-full 
+                       transition-all duration-300 
+                       group-hover:bg-primary group-hover:text-white">
                 {i + 1}
               </span>
-              <span>{feature}</span>
+
+              {/* Feature Text */}
+              <span className="transition-colors duration-300 group-hover:text-primary font-medium">
+                {feature}
+              </span>
             </MotionDiv>
           ))}
         </div>
+
       </section>
 
       {/* MAIN SECTIONS */}
       <section className="container mx-auto px-4 pb-20">
+
         {service.sections.map((sec, index) => (
           <MotionDiv
             key={sec.heading}
-            className={`flex flex-col md:flex-row gap-12 items-center mb-16 ${index % 2 !== 0 ? "md:flex-row-reverse" : ""
-              }`}
+            className="flex flex-col gap-6 md:gap-10 mb-16"
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: index * 0.2 }}
           >
-            {sec.img && (
-              <div className="relative h-48 w-full md:w-80 rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={sec.img}
-                  alt={sec.heading}
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            {/* HEADING */}
+            <h2 className="text-xl md:text-2xl font-bold text-primary">
+              {sec.heading}
+            </h2>
+
+            {/* NORMAL PARAGRAPH */}
+            {sec.text && (
+              <p className="text-muted-foreground whitespace-pre-line">
+                {sec.text}
+              </p>
             )}
 
-            <div>
-              <h2 className="text-xl md:text-2xl font-bold text-primary mb-2">
-                {sec.heading}
-              </h2>
-              <p className="text-muted-foreground">{sec.text}</p>
-            </div>
+            {/* OPTIONAL MINI HEADING */}
+            {sec.keyHeading && (
+              <h3 className="text-lg font-semibold mt-4">
+                {sec.keyHeading}
+              </h3>
+            )}
+
+            {/* BULLET POINTS */}
+            {sec.keys && (
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                {sec.keys.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+            )}
+
           </MotionDiv>
         ))}
 
-        <div className="flex justify-center">
-          <Button size="lg" className="px-8 py-3 text-lg font-semibold">
-            Request Consultation
-          </Button>
+        {/* FULL WIDTH IMAGE */}
+        {service.fullWidthImage && (
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="w-full my-12"
+          >
+            <div className="relative w-full h-80 md:h-[550px] rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={service.fullWidthImage}
+                alt="Section Banner"
+                fill
+                className="object-fit"
+              />
+            </div>
+          </MotionDiv>
+        )}
+
+        {/* CTA BUTTON */}
+        <div className="flex justify-center cursor-pointer mt-10">
+          <Link href="/#contact">
+            <Button
+              size="lg"
+              className="px-8 py-3 text-lg font-semibold cursor-pointer"
+            >
+              Request Consultation
+            </Button>
+          </Link>
         </div>
+
       </section>
+
+
 
       {/* WHAT WE OFFER */}
       <section className="container mx-auto py-16 px-4">
@@ -234,7 +321,8 @@ export default function Page() {
           {service.offerings.map((o, i) => (
             <MotionDiv
               key={i}
-              className="bg-card border rounded-xl p-6 shadow-md"
+              className="bg-card border rounded-xl p-6 shadow-md 
+          transition-all duration-300 hover:bg-primary/10 hover:-translate-y-1 hover:shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: i * 0.15 }}
@@ -246,60 +334,43 @@ export default function Page() {
         </div>
       </section>
 
-     {/* VALIDATION PROCESS */}
-<section className="bg-muted/30 py-16">
-  <div className="container mx-auto px-4">
-    <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-      Our Validation Process
-    </h2>
 
-    {/* 3 cards per row */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-      {service.process.map((step, i) => (
-        <MotionDiv
-          key={i}
-          className="bg-white shadow-lg rounded-xl px-6 py-8 text-center border"
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: i * 0.12 }}
-        >
-          <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold mb-3">
-            {i + 1}
+      {/* VALIDATION PROCESS */}
+      <section className="bg-muted/30 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
+            Our Validation Process
+          </h2>
+
+          {/* 3 cards per row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {service.process.map((step, i) => (
+              <MotionDiv
+                key={i}
+                className="bg-white shadow-lg rounded-xl px-6 py-8 text-center border
+            transition-all duration-300 hover:bg-primary/10 hover:-translate-y-1 hover:shadow-lg"
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: i * 0.12 }}
+              >
+                <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold mb-3 
+            transition-all duration-300 group-hover:scale-110">
+                  {i + 1}
+                </div>
+
+                <h3 className="font-bold text-base mb-2">{step.title}</h3>
+                <p className="text-muted-foreground text-xs">{step.desc}</p>
+              </MotionDiv>
+            ))}
           </div>
-          <h3 className="font-bold text-base mb-2">{step.title}</h3>
-          <p className="text-muted-foreground text-xs">{step.desc}</p>
-        </MotionDiv>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
+
 
 
       {/* TESTIMONIAL */}
-      <section className="container mx-auto py-16 px-4 flex justify-center">
-        <MotionDiv
-          className="max-w-2xl bg-card rounded-xl shadow-lg p-8 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <p className="text-lg font-semibold text-primary mb-4">
-            {service.testimonial.quote}
-          </p>
-
-          <Image
-            src={service.testimonial.avatar}
-            alt={service.testimonial.name}
-            width={56}
-            height={56}
-            className="rounded-full mx-auto mb-2"
-          />
-
-          <div className="font-bold">{service.testimonial.name}</div>
-          <div className="text-xs text-muted-foreground">
-            {service.testimonial.role}
-          </div>
-        </MotionDiv>
+      <section className="container mx-auto py-16 px-4">
+        <TestimonialCarousel testimonials={service.testimonial} />
       </section>
 
       {/* FAQ */}
@@ -337,13 +408,21 @@ export default function Page() {
 
       {/* CTA */}
       <div className="bg-primary py-10 text-center">
-        <Button
-          size="lg"
-          variant="secondary"
-          className="text-lg font-semibold rounded-full px-8"
-        >
-          Book a Free Consultation
-        </Button>
+        <Link href="/#contact">
+          <Button
+            size="lg"
+            variant="secondary"
+            className="
+        text-lg font-semibold rounded-full px-8
+        shadow-lg 
+        transition-all duration-300 
+        hover:shadow-xl hover:scale-[1.03] 
+        active:scale-[0.98] cursor-pointer
+      "
+          >
+            Book a Free Consultation
+          </Button>
+        </Link>
       </div>
     </div>
   );

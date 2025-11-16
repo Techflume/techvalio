@@ -1,136 +1,174 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { MotionDiv, MotionP, MotionH1 } from "@/components/common/MotionDiv";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import Link from "next/link";
 
 // ------------------------
 // Page Data (SERVER SIDE)
 // ------------------------
 const service = {
-  seo: {
-    title: "Software Testing & Validation - Techvalio",
-    description:
-      "Techvalio provides end-to-end Software Testing & Validation services complying with GxP, 21 CFR Part 11, and EU Annex 11 for regulated industries.",
-    keywords:
-      "Software testing, software validation, GxP, SRS, RSD, 21 CFR Part 11, Annex 11, validation lifecycle, Techvalio",
-  },
+    seo: {
+        title: "Software Testing & Validation - Techvalio",
+        description:
+            "Techvalio provides end-to-end Software Testing & Validation services complying with GxP, 21 CFR Part 11, and EU Annex 11 for regulated industries.",
+        keywords:
+            "Software testing, software validation, GxP, SRS, RSD, 21 CFR Part 11, Annex 11, validation lifecycle, Techvalio",
+    },
 
-  hero: {
-    title: "Software Testing & Validation",
-    img: "/images/services/services1.jpg",
-    alt: "Software Testing and Validation",
-  },
+    hero: {
+        title: "Software Testing & Validation",
+        img: "/images/services/banner/software-testing-and-validation.png",
+        alt: "Software Testing and Validation",
+    },
 
-  intro:
-    "Techvalio delivers comprehensive Software Testing and Validation services designed for regulated industries. Our solutions ensure that applications comply with GxP guidelines and regulatory standards such as 21 CFR Part 11 and EU Annex 11 while maintaining high software quality and operational integrity.",
+    intro:
+        "Techvalio delivers comprehensive Software Testing and Validation services designed for regulated industries. Our solutions ensure that applications comply with GxP guidelines and regulatory standards such as 21 CFR Part 11 and EU Annex 11 while maintaining high software quality and operational integrity.",
 
-  features: [
-    "Complete GxP support for application including SRS and RSD creation ",
-    "Converting user stories into development plan and attaining 21CFR Part 11 and EU annex 11 through out the app ",
-    "Support for pharmaceutical, biotech, and emerging innovations",
-    "Technical support and unit testing over GxP Aspects and Validation",
-  ],
+    features: [
+        "Complete GxP support for application including SRS and RSD creation",
+        "Converting user stories into development plan and attaining 21 CFR Part 11 and EU Annex 11 throughout the app",
+        "Support for pharmaceutical, biotech, and emerging innovations",
+        "Technical support and unit testing over GxP Aspects and Validation",
+    ],
 
-  sections: [
-    {
-      heading: "Why Software Validation Matters",
-      text: `In regulated environments such as pharmaceuticals, biotechnology, and healthcare, software must be validated to ensure accuracy, reliability, and regulatory compliance.  
-      
+    sections: [
+        {
+            heading: "Why Software Validation Matters",
+            text: `In regulated environments such as pharmaceuticals, biotechnology, and healthcare, software must be validated to ensure accuracy, reliability, and regulatory compliance.
+
 Software validation prevents data integrity issues, ensures secure system operations, and confirms that applications perform consistently according to user needs and documented requirements.`,
-      img: "/images/services/software-validation-what.jpg",
-    },
-    {
-      heading: "Regulatory-Driven Software Development",
-      text: `Techvalio ensures software development aligns with Good Automated Manufacturing Practice (GxP), Good Manufacturing Practices (GMP), Good Laboratory Practices (GLP), and Good Clinical Practices (GCP).  
-      
+            img: "/images/services/software-validation-what.jpg",
+        },
+        {
+            heading: "Regulatory-Driven Software Development",
+            text: `Techvalio ensures software development aligns with GAMP5, GMP, GLP, and GCP.
+
 We integrate compliance checkpoints into every stage of development—covering user needs, traceability, audit trails, secure access, and electronic records/e-signatures.`,
-    },
-  ],
+            keyHeading: "Key Compliance Areas:",
+            keys: [
+                "21 CFR Part 11 compliance",
+                "EU Annex 11 security and audit checks",
+                "User requirement mapping",
+                "Traceability matrix creation",
+            ],
+        },
+    ],
 
-  offerings: [
-    {
-      title: "GxP-Compliant Software Development Support",
-      desc: "Ensuring software meets GMP, GLP, and GCP guidelines throughout development and deployment.",
-    },
-    {
-      title: "SRS & RSD Documentation",
-      desc: "Creating detailed Software Requirements Specification (SRS) and Requirement Specification Document (RSD).",
-    },
-    {
-      title: "User Story to Development Conversion",
-      desc: "Converting user stories into structured development plans under Agile methodology.",
-    },
-    {
-      title: "Compliance with 21 CFR Part 11 & Annex 11",
-      desc: "Ensuring audit trails, security controls, access permissions, and data integrity are compliant.",
-    },
-    {
-      title: "GxP-Focused Unit Testing",
-      desc: "Validation of individual components for accuracy, security, and functional correctness.",
-    },
-    {
-      title: "Validation Planning & Execution",
-      desc: "End-to-end validation lifecycle including IQ, OQ, and PQ for full compliance.",
-    },
-  ],
+    fullWidthImage: "/images/services/soft-validation-full.jpg",
 
-  process: [
-    {
-      title: "Define Requirements (SRS & RSD)",
-      desc: "Documenting clear functional, non-functional, and regulatory requirements.",
-    },
-    {
-      title: "Convert User Stories Into Plans",
-      desc: "Developing structured execution plans from user stories using Agile methodology.",
-    },
-    {
-      title: "Compliance Assessment",
-      desc: "Evaluating system readiness for 21 CFR Part 11, Annex 11, and GxP compliance.",
-    },
-    {
-      title: "Unit Testing & Functional Testing",
-      desc: "Testing components, workflows, and user functions under GxP guidelines.",
-    },
-    {
-      title: "Validation Execution (IQ/OQ/PQ)",
-      desc: "Performing installation, operational, and performance qualification activities.",
-    },
-    {
-      title: "Documentation & Traceability",
-      desc: "Creating traceability matrices, validation reports, and audit-ready documents.",
-    },
-    {
-      title: "Release, Support & Maintenance",
-      desc: "Ensuring validated software remains compliant throughout its lifecycle.",
-    },
-  ],
+    offerings: [
+        {
+            title: "GxP-Compliant Software Development Support",
+            desc: "Ensuring software meets GMP, GLP, and GCP guidelines throughout development and deployment.",
+        },
+        {
+            title: "SRS & RSD Documentation",
+            desc: "Creating detailed Software Requirements Specification (SRS) and Requirement Specification Document (RSD).",
+        },
+        {
+            title: "User Story to Development Conversion",
+            desc: "Converting user stories into structured development plans under Agile methodology.",
+        },
+        {
+            title: "Compliance with 21 CFR Part 11 & Annex 11",
+            desc: "Ensuring audit trails, security controls, access permissions, and data integrity are compliant.",
+        },
+        {
+            title: "GxP-Focused Unit Testing",
+            desc: "Validation of individual components for accuracy, security, and functional correctness.",
+        },
+        {
+            title: "Validation Planning & Execution",
+            desc: "End-to-end validation lifecycle including IQ, OQ, and PQ for full compliance.",
+        },
+    ],
 
-  testimonial: {
-    quote:
-      "“Techvalio transformed our software development lifecycle with complete GxP validation and exceptional documentation quality.”",
-    name: "Priya Sharma",
-    role: "Quality Compliance Manager",
-    avatar: "/images/avatar-female.png",
-  },
+    process: [
+        {
+            title: "Define Requirements (SRS & RSD)",
+            desc: "Documenting clear functional, non-functional, and regulatory requirements.",
+        },
+        {
+            title: "Convert User Stories Into Plans",
+            desc: "Developing structured execution plans using Agile methodology.",
+        },
+        {
+            title: "Compliance Assessment",
+            desc: "Evaluating readiness for 21 CFR Part 11, Annex 11, and GxP compliance.",
+        },
+        {
+            title: "Unit Testing & Functional Testing",
+            desc: "Testing components and workflows under GxP guidelines.",
+        },
+        {
+            title: "Validation Execution (IQ/OQ/PQ)",
+            desc: "Performing complete qualification activities.",
+        },
+        {
+            title: "Documentation & Traceability",
+            desc: "Creating traceability matrices, validation reports, and audit-ready documents.",
+        },
+        {
+            title: "Release, Support & Maintenance",
+            desc: "Ensuring validated software remains compliant throughout its lifecycle.",
+        },
+    ],
 
-  faq: [
-    {
-      q: "What is included in Software Validation?",
-      a: "It includes SRS/RSD creation, user-story mapping, unit testing, compliance checks, IQ/OQ/PQ validation, documentation, and audit readiness.",
-    },
-    {
-      q: "Do you ensure compliance with 21 CFR Part 11?",
-      a: "Yes, we validate audit trails, e-signatures, data integrity, access control, and secure system configurations.",
-    },
-    {
-      q: "Is Agile development supported?",
-      a: "Absolutely. We convert user stories into actionable compliance-driven development plans.",
-    },
-  ],
+    testimonial: [
+        {
+            quote:
+                "“Techvalio transformed our software development lifecycle with complete GxP validation and exceptional documentation quality.”",
+            name: "Priya Sharma",
+            role: "Quality Compliance Manager",
+            avatar: "/images/avatar-female.png",
+        },
+        {
+            quote:
+                "“Their expertise in Annex 11 and Part 11 compliance helped us streamline our entire computerized system validation process with zero audit remarks.”",
+            name: "Dr. Kavita Deshmukh",
+            role: "Head of Digital Compliance, Lifecore Pharma",
+            avatar: "/images/avatar-female.png",
+        },
+        {
+            quote:
+                "“Techvalio’s team ensured full traceability from SRS to PQ. Our validation documents improved drastically in clarity, structure, and regulatory alignment.”",
+            name: "Harshit Nair",
+            role: "Software QA Lead, BioQuest Technologies",
+            avatar: "/images/avatar-male.png",
+        },
+        {
+            quote:
+                "“Their validation approach made our agile development cycle fully GxP compliant. Every sprint now produces audit-ready evidence.”",
+            name: "Dr. Sneha Iyer",
+            role: "Agile Compliance Coordinator, MediSoft Labs",
+            avatar: "/images/avatar-female.png",
+        },
+        {
+            quote:
+                "“Thanks to Techvalio, our system achieved complete 21 CFR Part 11 readiness with minimal rework. Their guidance on audit trails & e-records was exceptional.”",
+            name: "Arjun Mehra",
+            role: "IT Systems Validation Manager, Genex Pharma",
+            avatar: "/images/avatar-male.png",
+        }
+    ],
+
+
+    faq: [
+        {
+            q: "What is included in Software Validation?",
+            a: "It includes SRS/RSD creation, user-story mapping, unit testing, compliance checks, IQ/OQ/PQ validation, documentation, and audit readiness.",
+        },
+        {
+            q: "Do you ensure compliance with 21 CFR Part 11?",
+            a: "Yes, we validate audit trails, e-signatures, data integrity, access control, and secure configurations.",
+        },
+        {
+            q: "Is Agile development supported?",
+            a: "Absolutely. We convert user stories into actionable compliance-driven development plans.",
+        },
+    ],
 };
-
-
-
-
 
 export const metadata = {
     title: service.seo.title,
@@ -144,12 +182,7 @@ export default function Page() {
 
             {/* HERO */}
             <section className="relative flex items-center justify-center h-[320px] md:h-[400px] overflow-hidden">
-                <Image
-                    src={service.hero.img}
-                    alt={service.hero.alt}
-                    fill
-                    className="object-cover"
-                />
+                <Image src={service.hero.img} alt={service.hero.alt} fill className="object-cover" />
 
                 <MotionDiv
                     initial={{ opacity: 0, y: 24 }}
@@ -184,15 +217,19 @@ export default function Page() {
                     {service.features.map((feature, i) => (
                         <MotionDiv
                             key={i}
-                            className="bg-card border rounded-xl p-6 shadow-md flex items-start gap-4"
+                            className="group bg-card border rounded-xl p-6 shadow-md flex items-start gap-4
+              transition-all duration-300 hover:bg-primary/10 hover:-translate-y-1 hover:shadow-xl"
                             initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.9, delay: i * 0.15 }}
                         >
-                            <span className="h-8 w-8 flex items-center justify-center bg-primary/10 text-primary font-bold rounded-full">
+                            <span className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary font-bold rounded-full 
+              transition-all duration-300 group-hover:bg-primary group-hover:text-white">
                                 {i + 1}
                             </span>
-                            <span>{feature}</span>
+                            <span className="group-hover:text-primary transition-colors duration-300 font-medium">
+                                {feature}
+                            </span>
                         </MotionDiv>
                     ))}
                 </div>
@@ -200,39 +237,73 @@ export default function Page() {
 
             {/* MAIN SECTIONS */}
             <section className="container mx-auto px-4 pb-20">
+
                 {service.sections.map((sec, index) => (
                     <MotionDiv
                         key={sec.heading}
-                        className={`flex flex-col md:flex-row gap-12 items-center mb-16 ${index % 2 !== 0 ? "md:flex-row-reverse" : ""
-                            }`}
+                        className="flex flex-col gap-6 md:gap-10 mb-16"
                         initial={{ opacity: 0, y: 22 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: index * 0.2 }}
                     >
-                        {sec.img && (
-                            <div className="relative h-48 w-full md:w-80 rounded-lg overflow-hidden shadow-lg">
-                                <Image
-                                    src={sec.img}
-                                    alt={sec.heading}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
+                        <h2 className="text-xl md:text-2xl font-bold text-primary">
+                            {sec.heading}
+                        </h2>
+
+                        {sec.text && (
+                            <p className="text-muted-foreground whitespace-pre-line">
+                                {sec.text}
+                            </p>
                         )}
 
-                        <div>
-                            <h2 className="text-xl md:text-2xl font-bold text-primary mb-2">
-                                {sec.heading}
-                            </h2>
-                            <p className="text-muted-foreground">{sec.text}</p>
-                        </div>
+                        {sec.keyHeading && (
+                            <h3 className="text-lg font-semibold mt-4">{sec.keyHeading}</h3>
+                        )}
+
+                        {sec.keys && (
+                            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                                {sec.keys.map((k, i) => (
+                                    <li key={i}>{k}</li>
+                                ))}
+                            </ul>
+                        )}
+
+                        {/* {sec.img && (
+                            <div className="relative w-full h-80 md:h-[400px] rounded-xl overflow-hidden shadow-lg">
+                                <Image src={sec.img} alt={sec.heading} fill className="object-cover" />
+                            </div>
+                        )} */}
                     </MotionDiv>
                 ))}
 
-                <div className="flex justify-center">
-                    <Button size="lg" className="px-8 py-3 text-lg font-semibold">
-                        Request Consultation
-                    </Button>
+                {/* FULL WIDTH IMAGE */}
+                {/* {service.fullWidthImage && (
+                    <MotionDiv
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                        className="w-full my-12"
+                    >
+                        <div className="relative w-full h-80 md:h-[520px] rounded-xl overflow-hidden shadow-lg">
+                            <Image
+                                src={service.fullWidthImage}
+                                alt="Section Banner"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </MotionDiv>
+                )} */}
+
+                <div className="flex justify-center cursor-pointer mt-10">
+                    <Link href="/#contact">
+                        <Button
+                            size="lg"
+                            className="px-8 py-3 text-lg font-semibold cursor-pointer"
+                        >
+                            Request Consultation
+                        </Button>
+                    </Link>
                 </div>
             </section>
 
@@ -246,13 +317,14 @@ export default function Page() {
                     {service.offerings.map((o, i) => (
                         <MotionDiv
                             key={i}
-                            className="bg-card border rounded-xl p-6 shadow-md"
+                            className="bg-card border rounded-xl p-6 shadow-md 
+              transition-all duration-300 hover:bg-primary/10 hover:-translate-y-1 hover:shadow-lg"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.9, delay: i * 0.15 }}
                         >
                             <h3 className="font-bold text-lg text-primary mb-2">{o.title}</h3>
-                            <p className="text-muted-foreground text-sm">{o.desc}</p>
+                            <p className="text-muted-foreground text-sm whitespace-pre-line">{o.desc}</p>
                         </MotionDiv>
                     ))}
                 </div>
@@ -265,56 +337,34 @@ export default function Page() {
                         Our Validation Process
                     </h2>
 
-                    {/* 3 cards per row */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         {service.process.map((step, i) => (
                             <MotionDiv
                                 key={i}
-                                className="bg-white shadow-lg rounded-xl px-6 py-8 text-center border"
+                                className="bg-white border rounded-xl px-6 py-8 text-center shadow-lg
+                transition-all duration-300 hover:bg-primary/10 hover:-translate-y-1 hover:shadow-xl"
                                 initial={{ opacity: 0, y: 22 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: i * 0.12 }}
                             >
-                                <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold mb-3">
+                                <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 text-primary 
+                flex items-center justify-center font-bold mb-3">
                                     {i + 1}
                                 </div>
+
                                 <h3 className="font-bold text-base mb-2">{step.title}</h3>
-                                <p className="text-muted-foreground text-xs">{step.desc}</p>
+                                <p className="text-xs text-muted-foreground">{step.desc}</p>
                             </MotionDiv>
                         ))}
                     </div>
                 </div>
             </section>
 
-
             {/* TESTIMONIAL */}
-            <section className="container mx-auto py-16 px-4 flex justify-center">
-                <MotionDiv
-                    className="max-w-2xl bg-card rounded-xl shadow-lg p-8 text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    <p className="text-lg font-semibold text-primary mb-4">
-                        {service.testimonial.quote}
-                    </p>
-
-                    <Image
-                        src={service.testimonial.avatar}
-                        alt={service.testimonial.name}
-                        width={56}
-                        height={56}
-                        className="rounded-full mx-auto mb-2"
-                    />
-
-                    <div className="font-bold">{service.testimonial.name}</div>
-                    <div className="text-xs text-muted-foreground">
-                        {service.testimonial.role}
-                    </div>
-                </MotionDiv>
+            <section className="container mx-auto py-16 px-4">
+                <TestimonialCarousel testimonials={service.testimonial} />
             </section>
 
-            {/* FAQ */}
             {/* FAQ */}
             <section className="container mx-auto py-12 px-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">
@@ -331,7 +381,6 @@ export default function Page() {
                                 {item.q}
                             </summary>
 
-                            {/* Animate only the ANSWER */}
                             <MotionDiv
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -346,16 +395,23 @@ export default function Page() {
                 </div>
             </section>
 
-
             {/* CTA */}
             <div className="bg-primary py-10 text-center">
-                <Button
-                    size="lg"
-                    variant="secondary"
-                    className="text-lg font-semibold rounded-full px-8"
-                >
-                    Book a Free Consultation
-                </Button>
+                <Link href="/#contact">
+                    <Button
+                        size="lg"
+                        variant="secondary"
+                        className="
+        text-lg font-semibold rounded-full px-8
+        shadow-lg 
+        transition-all duration-300 
+        hover:shadow-xl hover:scale-[1.03] 
+        active:scale-[0.98] cursor-pointer
+      "
+                    >
+                        Book a Free Consultation
+                    </Button>
+                </Link>
             </div>
         </div>
     );
