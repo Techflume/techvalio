@@ -12,3 +12,6 @@ export function MotionP(props: any) {
 export function MotionH1(props: any) {
   return <motion.h1 {...props} />;
 }
+  export function MotionH2(props: any) {
+  return <motion.h2 {...props} />;
+}
