@@ -24,7 +24,7 @@ export default function ContactUsPage() {
     <>
       {/* Header */}
       <section className="bg-muted py-16 border-b border-border text-center">
-        <motion.h1 
+        <motion.h1
           className="text-4xl sm:text-5xl font-bold mb-3 text-foreground"
           initial={{ y: -60, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, ease: "easeOut" }}>
@@ -57,7 +57,7 @@ export default function ContactUsPage() {
               <Input placeholder="Your Name" required />
               <Input type="email" placeholder="Email" required />
             </div>
-            <Input  type="number" placeholder="Phone" required />
+            <Input type="number" placeholder="Phone" required />
             <Input placeholder="Subject" required />
             <Textarea rows={10} placeholder="Your Message" required />
             <motion.div
@@ -86,7 +86,21 @@ export default function ContactUsPage() {
             <div className="flex items-center gap-3 mb-2 text-lg font-semibold">
               <Phone className="w-6 h-6" /> Contact
             </div>
-            <div className="ml-8 text-sm">Phone: +0123-456-789<br />Email: info@techvalio.com</div>
+            <div className="ml-8 text-sm leading-relaxed">
+              <p>
+                <span className="font-medium">Phone:</span>
+                <a href="tel:+919964843644" className="hover:underline ml-1">
+                  +91 99648-43644
+                </a>
+              </p>
+              <p>
+                <span className="font-medium">Email:</span>
+                <a href="mailto:info@techvalio.com" className="hover:underline ml-1">
+                  info@techvalio.com
+                </a>
+              </p>
+            </div>
+
           </div>
           <div>
             <div className="flex items-center gap-3 mb-2 text-lg font-semibold">
@@ -112,17 +126,17 @@ export default function ContactUsPage() {
         <div className="container mx-auto flex flex-col md:flex-row gap-10 md:gap-24 justify-between">
           {[
             {
-              icon: <svg width="28" height="28" fill="none"><path d="M15 10V7a3 3 0 00-6 0v3m12 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+              icon: <svg width="28" height="28" fill="none"><path d="M15 10V7a3 3 0 00-6 0v3m12 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
               title: "Reasonable Prices",
               desc: "Quality design at affordable rates."
             },
             {
-              icon: <svg width="28" height="28" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 100 8h8a4 4 0 004-4z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+              icon: <svg width="28" height="28" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 100 8h8a4 4 0 004-4z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
               title: "Timely Project Delivery",
               desc: "On-time project completion."
             },
             {
-              icon: <svg width="28" height="28" fill="none"><path d="M9 7V6a6 6 0 1112 0v1m0 4h-6m8 4a2 2 0 01-2 2 2 2 0 01-2-2m4 0a4 4 0 00-4-4H4a4 4 0 00-4 4v1a4 4 0 004 4h8a4 4 0 004-4v-1z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+              icon: <svg width="28" height="28" fill="none"><path d="M9 7V6a6 6 0 1112 0v1m0 4h-6m8 4a2 2 0 01-2 2 2 2 0 01-2-2m4 0a4 4 0 00-4-4H4a4 4 0 00-4 4v1a4 4 0 004 4h8a4 4 0 004-4v-1z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
               title: "Professional Team",
               desc: "Expert architects, top results."
             }
@@ -145,7 +159,7 @@ export default function ContactUsPage() {
         </div>
       </section>
 
-     
+
     </>
   );
 }

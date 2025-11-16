@@ -79,13 +79,13 @@ export default function AboutUsPage() {
             </p>
 
             <p className="text-sm text-muted-foreground mb-5">
-              Since our inception, we've empowered organizations to future-proof
+              Since our inception, we&apos;ve empowered organizations to future-proof
               operations, reduce risk, and ensure every deployment exceeds both
               regulatory and market standards.
             </p>
 
             <div className="mt-3 italic text-primary font-semibold">
-              "Modern Validation. Trusted Compliance."
+              &quot;Modern Validation. Trusted Compliance.&quot;
             </div>
             <div className="text-right font-bold mt-3 text-primary">
               ~ Team Techvalio
