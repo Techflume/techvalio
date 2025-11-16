@@ -51,7 +51,7 @@ export default function Industry() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex justify-center"
               >
-                <Link href={`/industry/${industry.slug}`} className="block group focus:outline-none w-full">
+                {/* <Link href={`/industry/${industry.slug}`} className="block group focus:outline-none w-full"> */}
                   <Card className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 bg-card/50 backdrop-blur-sm border-primary/10 flex flex-col items-center justify-center cursor-pointer group-hover:border-primary">
                     <CardHeader className="flex flex-col items-center justify-center">
                       <div className="mx-auto mb-4 h-16 w-16 rounded-lg overflow-hidden bg-primary/10 flex items-center justify-center">
@@ -74,7 +74,7 @@ export default function Industry() {
                       </p>
                     </CardContent>
                   </Card>
-                </Link>
+                {/* </Link> */}
               </AnimatedDiv>
             ))}
           </div>
