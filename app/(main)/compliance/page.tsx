@@ -51,10 +51,10 @@ export default function CompliancePage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex justify-center"
               >
-                <Link
+                {/* <Link
                   href={`/compliance/${compliance.slug}`}
                   className="block w-full group focus:outline-none"
-                >
+                > */}
                   <Card className="h-full text-center transition-all hover:shadow-xl hover:-translate-y-1 bg-card/50 backdrop-blur-sm border-primary/10 flex flex-col items-center justify-center cursor-pointer group-hover:border-primary">
                     <CardHeader className="flex flex-col items-center justify-center">
                       <div className="mx-auto mb-4 h-16 w-16 rounded-lg overflow-hidden bg-primary/10 flex items-center justify-center">
@@ -77,7 +77,7 @@ export default function CompliancePage() {
                       </p>
                     </CardContent>
                   </Card>
-                </Link>
+                {/* </Link> */}
               </AnimatedDiv>
             ))}
           </div>
