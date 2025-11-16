@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { MotionDiv, MotionP, MotionH1 } from "@/components/common/MotionDiv";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import Link from "next/link";
 
 // ------------------------
 // Page Data (SERVER SIDE)
@@ -16,7 +18,8 @@ const service = {
 
   hero: {
     title: "Pharmaceutical Licensing Services",
-    img: "/images/services/services1.jpg",
+    // img: "/images/services/services1.jpg",
+    img: "/images/services/banner/Pharmaceutical Licensing Services.png",
     alt: "Pharmaceutical Licensing",
   },
 
@@ -30,18 +33,27 @@ const service = {
     "Automated documentation workflows",
   ],
 
+  // NEW STRUCTURED SECTIONS
   sections: [
     {
       heading: "Why Choose Techvalio?",
-      text: `Our team combines industry expertise with advanced validation technologies. 
-      We create solutions that meet requirements and help your teams innovate confidently.`,
+      text: `Our team combines industry expertise with advanced validation technologies.
+We create solutions that meet regulatory requirements and help your teams innovate confidently.`,
       img: "/images/banner/banner2.jpg",
     },
     {
       heading: "Our Approach: Agile, Scalable, Personalized",
       text: `From assessment to delivery and support, we tailor the validation lifecycle to minimize risk and ensure compliance.`,
+      keyHeading: "Key Benefits:",
+      keys: [
+        "Reduced audit deviations & documentation errors",
+        "Faster validation lifecycle with agile methodology",
+        "Regulatory alignment with FDA, EMA & WHO",
+      ],
     },
   ],
+
+  fullWidthImage: "/images/services/licenses-full.jpg",
 
   offerings: [
     {
@@ -77,13 +89,44 @@ const service = {
     },
   ],
 
-  testimonial: {
+ testimonial: [
+  {
     quote:
       "“After switching to Techvalio’s pharmaceutical validation, our audit process became 2x faster and all documentation was instantly QC-ready.”",
     name: "Dr. Rachel Verma",
     role: "Regulatory Lead, PharmaNova",
     avatar: "/images/avatar-sample.png",
   },
+  {
+    quote:
+      "“Techvalio completely streamlined our validation lifecycle. Every protocol, test script, and report was delivered with exceptional clarity and precision.”",
+    name: "Dr. Meenakshi Rao",
+    role: "QA Validation Manager, BioEdge Pharma",
+    avatar: "/images/avatar-female.png",
+  },
+  {
+    quote:
+      "“Their GxP-driven validation approach helped us close long-pending CAPAs and pass regulatory inspection without a single observation.”",
+    name: "Amit Khurana",
+    role: "Quality Compliance Head, Zenith Lifesciences",
+    avatar: "/images/avatar-male.png",
+  },
+  {
+    quote:
+      "“Techvalio’s documentation quality is outstanding. Audit trails, test evidence, and traceability matrices were perfectly aligned with regulatory expectations.”",
+    name: "Dr. Shalini Mukherjee",
+    role: "Regulatory Affairs Specialist, NovaCure Biotech",
+    avatar: "/images/avatar-female.png",
+  },
+  {
+    quote:
+      "“Thanks to Techvalio’s validation support, our software system achieved full 21 CFR Part 11 readiness ahead of schedule. Truly impressive team.”",
+    name: "Rohit Sinha",
+    role: "IT Validation Lead, Medisphere Therapeutics",
+    avatar: "/images/avatar-male.png",
+  }
+],
+
 
   faq: [
     {
@@ -109,12 +152,7 @@ export default function Page() {
 
       {/* HERO */}
       <section className="relative flex items-center justify-center h-[320px] md:h-[400px] overflow-hidden">
-        <Image
-          src={service.hero.img}
-          alt={service.hero.alt}
-          fill
-          className="object-cover"
-        />
+        <Image src={service.hero.img} alt={service.hero.alt} fill className="object-cover" />
 
         <MotionDiv
           initial={{ opacity: 0, y: 24 }}
@@ -149,15 +187,20 @@ export default function Page() {
           {service.features.map((feature, i) => (
             <MotionDiv
               key={i}
-              className="bg-card border rounded-xl p-6 shadow-md flex items-start gap-4"
+              className="group bg-card border rounded-xl p-6 shadow-md flex items-start gap-4
+              transition-all duration-300 hover:bg-primary/10 hover:-translate-y-1 hover:shadow-xl"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: i * 0.15 }}
+              transition={{ duration: 0.9, delay: i * 0.1 }}
             >
-              <span className="h-8 w-8 flex items-center justify-center bg-primary/10 text-primary font-bold rounded-full">
+              <span className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary font-bold rounded-full 
+              transition-all duration-300 group-hover:bg-primary group-hover:text-white">
                 {i + 1}
               </span>
-              <span>{feature}</span>
+
+              <span className="group-hover:text-primary transition-colors duration-300 font-medium">
+                {feature}
+              </span>
             </MotionDiv>
           ))}
         </div>
@@ -165,40 +208,74 @@ export default function Page() {
 
       {/* MAIN SECTIONS */}
       <section className="container mx-auto px-4 pb-20">
+
         {service.sections.map((sec, index) => (
           <MotionDiv
             key={sec.heading}
-            className={`flex flex-col md:flex-row gap-12 items-center mb-16 ${index % 2 !== 0 ? "md:flex-row-reverse" : ""
-              }`}
+            className="flex flex-col gap-6 md:gap-10 mb-16"
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: index * 0.2 }}
           >
-            {sec.img && (
-              <div className="relative h-48 w-full md:w-80 rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={sec.img}
-                  alt={sec.heading}
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            <h2 className="text-xl md:text-2xl font-bold text-primary">
+              {sec.heading}
+            </h2>
+
+            {sec.text && (
+              <p className="text-muted-foreground whitespace-pre-line">
+                {sec.text}
+              </p>
             )}
 
-            <div>
-              <h2 className="text-xl md:text-2xl font-bold text-primary mb-2">
-                {sec.heading}
-              </h2>
-              <p className="text-muted-foreground">{sec.text}</p>
-            </div>
+            {sec.keyHeading && (
+              <h3 className="text-lg font-semibold mt-4">{sec.keyHeading}</h3>
+            )}
+
+            {sec.keys && (
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                {sec.keys.map((k, i) => (
+                  <li key={i}>{k}</li>
+                ))}
+              </ul>
+            )}
+
+            {/* {sec.img && (
+              <div className="relative w-full h-80 md:h-[400px] rounded-xl overflow-hidden shadow-lg">
+                <Image src={sec.img} alt={sec.heading} fill className="object-cover" />
+              </div>
+            )} */}
           </MotionDiv>
         ))}
 
-        <div className="flex justify-center">
-          <Button size="lg" className="px-8 py-3 text-lg font-semibold">
-            Request Consultation
-          </Button>
-        </div>
+        {/* FULL WIDTH IMAGE */}
+        {/* {service.fullWidthImage && (
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="w-full my-12"
+          >
+            <div className="relative w-full h-80 md:h-[520px] rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={service.fullWidthImage}
+                alt="Full Width Section"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </MotionDiv>
+        )} */}
+
+        <div className="flex justify-center cursor-pointer mt-10">
+                    <Link href="/#contact">
+                        <Button
+                            size="lg"
+                            className="px-8 py-3 text-lg font-semibold cursor-pointer"
+                        >
+                            Request Consultation
+                        </Button>
+                    </Link>
+                </div>
       </section>
 
       {/* WHAT WE OFFER */}
@@ -211,39 +288,43 @@ export default function Page() {
           {service.offerings.map((o, i) => (
             <MotionDiv
               key={i}
-              className="bg-card border rounded-xl p-6 shadow-md"
+              className="bg-card border rounded-xl p-6 shadow-md 
+              transition-all duration-300 hover:bg-primary/10 hover:-translate-y-1 hover:shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: i * 0.15 }}
             >
               <h3 className="font-bold text-lg text-primary mb-2">{o.title}</h3>
-              <p className="text-muted-foreground text-sm">{o.desc}</p>
+              <p className="text-muted-foreground text-sm whitespace-pre-line">{o.desc}</p>
             </MotionDiv>
           ))}
         </div>
       </section>
 
-      {/* VALIDATION PROCESS */}
+      {/* PROCESS */}
       <section className="bg-muted/30 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
             Our Validation Process
           </h2>
 
-          <div className="flex flex-col md:flex-row md:justify-center md:gap-8 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {service.process.map((step, i) => (
               <MotionDiv
                 key={i}
-                className="bg-white shadow-lg rounded-xl px-6 py-8 text-center border"
+                className="bg-white border rounded-xl px-6 py-8 text-center shadow-lg
+                transition-all duration-300 hover:bg-primary/10 hover:-translate-y-1 hover:shadow-xl"
                 initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: i * 0.12 }}
+                transition={{ duration: 1, delay: i * 0.1 }}
               >
-                <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold mb-3">
+                <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 text-primary 
+                flex items-center justify-center font-bold mb-3">
                   {i + 1}
                 </div>
+
                 <h3 className="font-bold text-base mb-2">{step.title}</h3>
-                <p className="text-muted-foreground text-xs">{step.desc}</p>
+                <p className="text-xs text-muted-foreground">{step.desc}</p>
               </MotionDiv>
             ))}
           </div>
@@ -251,33 +332,10 @@ export default function Page() {
       </section>
 
       {/* TESTIMONIAL */}
-      <section className="container mx-auto py-16 px-4 flex justify-center">
-        <MotionDiv
-          className="max-w-2xl bg-card rounded-xl shadow-lg p-8 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <p className="text-lg font-semibold text-primary mb-4">
-            {service.testimonial.quote}
-          </p>
-
-          <Image
-            src={service.testimonial.avatar}
-            alt={service.testimonial.name}
-            width={56}
-            height={56}
-            className="rounded-full mx-auto mb-2"
-          />
-
-          <div className="font-bold">{service.testimonial.name}</div>
-          <div className="text-xs text-muted-foreground">
-            {service.testimonial.role}
-          </div>
-        </MotionDiv>
+      <section className="container mx-auto py-16 px-4">
+       <TestimonialCarousel testimonials={service.testimonial} />
       </section>
 
-      {/* FAQ */}
       {/* FAQ */}
       <section className="container mx-auto py-12 px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">
@@ -294,7 +352,6 @@ export default function Page() {
                 {item.q}
               </summary>
 
-              {/* Animate only the ANSWER */}
               <MotionDiv
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -309,16 +366,23 @@ export default function Page() {
         </div>
       </section>
 
-
       {/* CTA */}
       <div className="bg-primary py-10 text-center">
-        <Button
-          size="lg"
-          variant="secondary"
-          className="text-lg font-semibold rounded-full px-8"
-        >
-          Book a Free Consultation
-        </Button>
+        <Link href="/#contact">
+          <Button
+            size="lg"
+            variant="secondary"
+            className="
+        text-lg font-semibold rounded-full px-8
+        shadow-lg 
+        transition-all duration-300 
+        hover:shadow-xl hover:scale-[1.03] 
+        active:scale-[0.98] cursor-pointer
+      "
+          >
+            Book a Free Consultation
+          </Button>
+        </Link>
       </div>
     </div>
   );
