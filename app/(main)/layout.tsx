@@ -1,7 +1,5 @@
-// app/(main)/layout.jsx
 
-// import Footer from '@/components/common/Footer';
-
+import { Toaster } from "@/components/ui/sonner"
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
 import { ReactNode } from 'react';
@@ -15,6 +13,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <main >
           {children}
         </main>
+        <Toaster position="top-right" richColors />
         <Footer />
       </body>
     </html>

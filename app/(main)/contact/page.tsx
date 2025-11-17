@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Phone,
-  Mail,
   MapPin,
   Clock,
   Facebook,
@@ -16,24 +15,122 @@ import {
   Instagram,
   Youtube,
   Linkedin,
+  Send,
+  XCircle,
 } from "lucide-react";
-
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 export default function ContactUsPage() {
+  // Dialog state
+  const [openDialog, setOpenDialog] = useState(false);
+  const [dialogType, setDialogType] = useState<"success" | "error">("success");
+  const [dialogMessage, setDialogMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  // Form state
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  function handleInputChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    const { name, value } = e.target;
+    setForm(prev => ({ ...prev, [name]: value }));
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
+
+    // Replace with your server API call
+   const res = await fetch("/api/contact-us", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(form),
+});
+
+    const result = await res.json();
+
+    if (result.success) {
+      setDialogType("success");
+      setDialogMessage("Your message was sent! We will contact you soon.");
+      setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+    } else {
+      setDialogType("error");
+      setDialogMessage("Error sending message: " + result.error);
+    }
+    setOpenDialog(true);
+    setSubmitting(false);
+  }
+
   return (
     <>
-      {/* Header */}
+      {/* Success/Error Modal */}
+      <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+        <DialogContent
+          className={dialogType === "success" ? "bg-green-600 text-white" : "bg-red-600 text-white"}
+          style={{ minWidth: 340, padding: "2.5rem 1.5rem" }}
+        >
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-white">
+              {dialogType === "success" ? (
+                <>
+                  <Send className="w-6 h-6 text-white" /> Message Sent
+                </>
+              ) : (
+                <>
+                  <XCircle className="w-6 h-6 text-white" /> Error
+                </>
+              )}
+            </DialogTitle>
+            <DialogDescription className="mt-2 text-white text-md">
+              {dialogMessage}
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter className="flex justify-end mt-4">
+            <Button
+              onClick={() => setOpenDialog(false)}
+              className="cursor-pointer"
+              variant={dialogType === "success" ? "default" : "destructive"}
+              style={{
+                backgroundColor: "#fff",
+                color: dialogType === "success" ? "#1d7a36" : "#b91c1c",
+                fontWeight: 600,
+              }}
+            >
+              Close
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Contact Header */}
       <section className="bg-muted py-16 border-b border-border text-center">
         <motion.h1
           className="text-4xl sm:text-5xl font-bold mb-3 text-foreground"
-          initial={{ y: -60, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}>
+          initial={{ y: -60, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           Contact Us
         </motion.h1>
         <motion.div
           className="text-muted-foreground text-base"
-          initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}>
+          initial={{ x: -30, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           Home / <span className="text-primary font-semibold">Contact Us</span>
         </motion.div>
       </section>
@@ -43,30 +140,78 @@ export default function ContactUsPage() {
         {/* Form left */}
         <motion.div
           className="md:col-span-2 bg-white shadow-xl rounded-3xl p-12 border"
-          initial={{ y: 48, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.09 }}>
+          initial={{ y: 48, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.09 }}
+        >
           <motion.h2
             className="text-2xl sm:text-3xl font-bold mb-4 text-foreground"
-            initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.18 }}>
+            transition={{ duration: 0.5, delay: 0.18 }}
+          >
             Get Your <span className="text-primary italic">Free Quote Today!</span>
           </motion.h2>
-          <form className="mt-7 space-y-5">
+          <form className="mt-7 space-y-5" onSubmit={handleSubmit}>
             <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
-              <Input placeholder="Your Name" required />
-              <Input type="email" placeholder="Email" required />
+              <Input
+                name="name"
+                placeholder="Your Name"
+                required
+                value={form.name}
+                onChange={handleInputChange}
+              />
+              <Input
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+                value={form.email}
+                onChange={handleInputChange}
+              />
             </div>
-            <Input type="number" placeholder="Phone" required />
-            <Input placeholder="Subject" required />
-            <Textarea rows={10} placeholder="Your Message" required />
+            <Input
+              type="number"
+              name="phone"
+              placeholder="Phone"
+              required
+              value={form.phone}
+              onChange={handleInputChange}
+            />
+            <Input
+              name="subject"
+              placeholder="Subject"
+              required
+              value={form.subject}
+              onChange={handleInputChange}
+            />
+            <Textarea
+              name="message"
+              rows={10}
+              placeholder="Your Message"
+              required
+              value={form.message}
+              onChange={handleInputChange}
+            />
             <motion.div
               initial={{ scale: 0.96, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: 0.18 }}>
-              <Button size="lg" className="w-[200px] mt-2 rounded-full shadow-lg hover:-translate-y-1 hover:shadow-xl transition">
-                Send Message
+              transition={{ duration: 0.55, delay: 0.18 }}
+            >
+              <Button
+                type="submit"
+                size="lg"
+                className="w-[200px] mt-2 rounded-full shadow-lg hover:-translate-y-1 hover:shadow-xl transition cursor-pointer"
+                disabled={submitting}
+                style={{
+                  cursor: submitting ? "not-allowed" : "pointer",
+                  opacity: submitting ? 0.7 : 1,
+                }}
+              >
+                {submitting ? "Sending..." : "Send Message"}
               </Button>
             </motion.div>
           </form>
@@ -74,13 +219,20 @@ export default function ContactUsPage() {
         {/* Info Right */}
         <motion.div
           className="bg-primary/95 text-white rounded-3xl shadow-2xl p-10 border border-primary/50 flex flex-col gap-7"
-          initial={{ y: 70, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}>
+          initial={{ y: 70, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div>
             <div className="flex items-center gap-3 mb-2 text-lg font-semibold">
               <MapPin className="w-6 h-6" /> Address
             </div>
-            <div className="ml-8 text-sm">No 1265 Sukhi ,<br />SMV layout kengeri Upanagara ,<br />Bangaluru 560060</div>
+            <div className="ml-8 text-sm">
+              No 1265 Sukhi ,<br />
+              SMV layout kengeri Upanagara ,<br />
+              Bangaluru 560060
+            </div>
           </div>
           <div>
             <div className="flex items-center gap-3 mb-2 text-lg font-semibold">
@@ -100,22 +252,34 @@ export default function ContactUsPage() {
                 </a>
               </p>
             </div>
-
           </div>
           <div>
             <div className="flex items-center gap-3 mb-2 text-lg font-semibold">
               <Clock className="w-6 h-6" /> Open Time
             </div>
-            <div className="ml-8 text-sm">Mon – Fri: 10:00 – 20:00<br />Sat – Sun: 11:00 – 18:00</div>
+            <div className="ml-8 text-sm">
+              Mon – Fri: 10:00 – 20:00<br />
+              Sat – Sun: 11:00 – 18:00
+            </div>
           </div>
           <div>
             <div className="font-bold text-lg mb-2">Stay Connected</div>
             <div className="flex gap-3 ml-2">
-              <a href="https://www.linkedin.com/company/techvalio" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition"><Linkedin className="w-5 h-5" /></a>
-              <a href="#" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition"><Facebook className="w-5 h-5" /></a>
-              <a href="https://x.com/techvalio" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition"><Twitter className="w-5 h-5" /></a>
-              <a href="#" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition"><Instagram className="w-5 h-5" /></a>
-              <a href="https://www.youtube.com/@Techvalio" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition"><Youtube className="w-5 h-5" /></a>
+              <a href="https://www.linkedin.com/company/techvalio" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="#" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="https://x.com/techvalio" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://www.youtube.com/@Techvalio" className="bg-white/15 hover:bg-white/30 rounded-full p-2 transition">
+                <Youtube className="w-5 h-5" />
+              </a>
             </div>
           </div>
         </motion.div>
@@ -126,20 +290,50 @@ export default function ContactUsPage() {
         <div className="container mx-auto flex flex-col md:flex-row gap-10 md:gap-24 justify-between">
           {[
             {
-              icon: <svg width="28" height="28" fill="none"><path d="M15 10V7a3 3 0 00-6 0v3m12 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
+              icon: (
+                <svg width="28" height="28" fill="none">
+                  <path
+                    d="M15 10V7a3 3 0 00-6 0v3m12 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2h14a2 2 0 012 2z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              ),
               title: "Reasonable Prices",
-              desc: "Quality design at affordable rates."
+              desc: "Quality design at affordable rates.",
             },
             {
-              icon: <svg width="28" height="28" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 100 8h8a4 4 0 004-4z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
+              icon: (
+                <svg width="28" height="28" fill="none">
+                  <path
+                    d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 100 8h8a4 4 0 004-4z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              ),
               title: "Timely Project Delivery",
-              desc: "On-time project completion."
+              desc: "On-time project completion.",
             },
             {
-              icon: <svg width="28" height="28" fill="none"><path d="M9 7V6a6 6 0 1112 0v1m0 4h-6m8 4a2 2 0 01-2 2 2 2 0 01-2-2m4 0a4 4 0 00-4-4H4a4 4 0 00-4 4v1a4 4 0 004 4h8a4 4 0 004-4v-1z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
+              icon: (
+                <svg width="28" height="28" fill="none">
+                  <path
+                    d="M9 7V6a6 6 0 1112 0v1m0 4h-6m8 4a2 2 0 01-2 2 2 2 0 01-2-2m4 0a4 4 0 00-4-4H4a4 4 0 00-4 4v1a4 4 0 004 4h8a4 4 0 004-4v-1z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              ),
               title: "Professional Team",
-              desc: "Expert architects, top results."
-            }
+              desc: "Expert architects, top results.",
+            },
           ].map((item, idx) => (
             <motion.div
               key={item.title}
@@ -149,7 +343,9 @@ export default function ContactUsPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: idx * 0.09 }}
             >
-              <span className="bg-primary/10 text-primary rounded-full p-3 flex items-center justify-center shadow">{item.icon}</span>
+              <span className="bg-primary/10 text-primary rounded-full p-3 flex items-center justify-center shadow">
+                {item.icon}
+              </span>
               <div>
                 <div className="font-bold">{item.title}</div>
                 <div className="text-xs text-muted-foreground">{item.desc}</div>
@@ -158,8 +354,6 @@ export default function ContactUsPage() {
           ))}
         </div>
       </section>
-
-
     </>
   );
 }
